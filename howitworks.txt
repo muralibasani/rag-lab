@@ -1,5 +1,5 @@
 
-Aiven's AI Assistant Hub - RAG based.
+AI Assistant - RAG based.
 
 How it works ?
 

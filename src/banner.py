@@ -11,6 +11,6 @@ def print_banner(file_path=None):
             banner = f.read()
         print(banner)
     except FileNotFoundError:
-        print("🧠 Kafka LLM Assistant 🧠")  # fallback if file not found
+        print("🧠  AI Assistant 🧠")  # fallback if file not found
 
 

@@ -7,7 +7,7 @@ import os
 import warnings
 
 # ✅ Updated LangChain imports for v1+
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_chroma import Chroma
 from langchain_ollama import ChatOllama, OllamaLLM
@@ -368,8 +368,8 @@ def start_chat():
                 number, text = s.split(".", 1) if "." in s else ("•", s)
                 console.print(f"   [cyan]{number.strip()}.[/cyan] {text.strip()}")
 
-        # Friendly prompt for next question
-        console.print(random.choice(friendly_responses))
+    # Friendly prompt for next question
+    console.print(random.choice(friendly_responses))
 
 
 

@@ -11,7 +11,7 @@ All computation is local.
 # Clone the repository
 
 # Run the automated installation script
-./install.sh
+source install.sh
 ```
 
 ### Option 2: Manual Installation
@@ -117,8 +117,6 @@ The assistant supports two vector database backends for storing document embeddi
 #### Best Practices
 - For persistent, scalable QA, use Chroma.
 - For quick tests or development, use FAISS.
-
-For more details, see the comments in `src/qa_engine.py`.
 
 ## Notes on Usage and Licensing
 

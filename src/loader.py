@@ -193,8 +193,8 @@ def load_jira_links(urls: List[str]) -> List[Document]:
     
     try:
         jira = Jira(
-            url="https://aiven.atlassian.net/",
-            username='muralidhar.basani@aiven.io',
+            url="https://yourorg.atlassian.net/",
+            username='yourusername',
             password=JIRA_API_TOKEN
         )
 
@@ -249,7 +249,7 @@ def load_jira_links(urls: List[str]) -> List[Document]:
                     doc = Document(
                         page_content=content,
                         metadata={
-                            "source": f"https://aiven.atlassian.net/browse/{key}",
+                            "source": f"https://yourorg.atlassian.net/browse/{key}",
                             "issue_key": key,
                             "project": "Streaming Fleet",
                             "type": issue_type,
