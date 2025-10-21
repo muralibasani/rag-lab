@@ -12,9 +12,7 @@ from langchain_community.document_loaders import (
 )
 from langchain_community.document_loaders.git import GitLoader
 from langchain_core.documents import Document
-
 from langchain_text_splitters.character import RecursiveCharacterTextSplitter
-
 
 from playwright.async_api import async_playwright
 from dotenv import load_dotenv
@@ -84,6 +82,7 @@ def load_local_files(files_dirs: List[str] = None, resources_dir: str = "resourc
             continue
 
         for file_path in dir_path.iterdir():
+            
             if not file_path.is_file():
                 continue
 
@@ -102,7 +101,7 @@ def load_local_files(files_dirs: List[str] = None, resources_dir: str = "resourc
                     continue
 
                 loaded_docs = loader.load()
-                # print(f"✅ Loaded {len(loaded_docs)} document(s) from: {file_path.name}")
+                print(f"✅ Loaded {len(loaded_docs)} document(s) from: {file_path.name}")
                 docs.extend(loaded_docs)
 
                 # Optional preview of first 500 characters
@@ -193,12 +192,12 @@ def load_jira_links(urls: List[str]) -> List[Document]:
     
     try:
         jira = Jira(
-            url="https://aiven.atlassian.net/",
-            username='muralidhar.basani@aiven.io',
+            url="https://yourorg.atlassian.net/",
+            username='yourusername',
             password=JIRA_API_TOKEN
         )
 
-        # issue = jira.issue('FLEET-6044')
+        # issue = jira.issue('issue-6044')
 
         start_at = 0
         batch_size = 50
@@ -234,7 +233,7 @@ def load_jira_links(urls: List[str]) -> List[Document]:
 
                     content_parts = [
                         f"Issue: {key}",
-                        f"FLEET Issue {key} {key} {key}",
+                        f"ISSUE Issue {key} {key} {key}",
                         f"Type: {issue_type}",
                         f"Priority: {priority}",
                         f"Status: {status}",
@@ -249,9 +248,9 @@ def load_jira_links(urls: List[str]) -> List[Document]:
                     doc = Document(
                         page_content=content,
                         metadata={
-                            "source": f"https://aiven.atlassian.net/browse/{key}",
+                            "source": f"https://yourorg.atlassian.net/browse/{key}",
                             "issue_key": key,
-                            "project": "Streaming Fleet",
+                            "project": "Project",
                             "type": issue_type,
                             "priority": priority,
                             "status": status

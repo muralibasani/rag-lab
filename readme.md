@@ -1,7 +1,9 @@
 # AI Assistants
 
-Based on AI, RAG, LangChain, Ollama, FAISS embeddings, configure this project in your organization to help you with searching internal documenation.
-All computation is local.
+Leverage AI, RAG, LangChain, Ollama, and FAISS embeddings to set up this project in your organization for efficient internal documentation search.
+All processing happens locally.
+
+You can index internal documents in .txt, .pdf, .md, .csv formats, as well as content from URLs (internal or external), GitHub repositories, or Jira issues.
 
 ## 🚀 Quick Installation
 
@@ -11,7 +13,7 @@ All computation is local.
 # Clone the repository
 
 # Run the automated installation script
-./install.sh
+source install.sh
 ```
 
 ### Option 2: Manual Installation
@@ -106,6 +108,13 @@ The assistant supports two vector database backends for storing document embeddi
   ```
 - The Chroma DB is automatically created if it does not exist, or loaded if present.
 
+#### configuring assistants.json
+- assistant_name Name of assistant
+- source_info_type - jira/github/text
+- model - llama3/granite
+- source_files - directory inside resources dir with all local files
+- source_urls -  all urls array
+
 #### Troubleshooting Chroma
 - If you see errors about missing or corrupted Chroma DB, delete the `chroma_store` directory and restart the backend to rebuild it.
 - Always use the same embedding model for both creation and querying.
@@ -118,8 +127,6 @@ The assistant supports two vector database backends for storing document embeddi
 - For persistent, scalable QA, use Chroma.
 - For quick tests or development, use FAISS.
 
-For more details, see the comments in `src/qa_engine.py`.
-
 ## Notes on Usage and Licensing
 
 This project runs entirely **on your local machine**.  
@@ -129,3 +136,5 @@ It uses the **Ollama Llama 3** model, downloaded and executed locally — no dat
 Do **not** include or scrape other web sources without verifying their license or obtaining explicit permission.  
 This ensures your local assistant remains compliant with open-source and fair-use principles.
 
+#### Useful links
+https://reference.langchain.com/python/langchain/
