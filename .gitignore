@@ -1,0 +1,11 @@
+.DS_Store
+
+vector_store/
+__pycache__/
+venv/
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt

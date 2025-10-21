@@ -1,0 +1,14 @@
+[
+  {
+    "assistant_name": "Domain_1",
+    "assistant_description": "AI assistant for Domain_1: tag1, tag2 ...",
+    "source_urls": [
+      "https://kafka.apache.org/documentation/"
+    ],
+    "source_files": [
+    ],
+    "source_info_type": "text",
+    "model": "llama3:8b",
+    "file_extensions":[]
+  }
+]

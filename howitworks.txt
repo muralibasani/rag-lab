@@ -1,0 +1,104 @@
+
+Aiven's AI Assistant Hub - RAG based.
+
+How it works ?
+
+┌──────────────────────────┐
+│      Your Kafka Docs     │
+│ (txt, PDFs, etc.)        │
+└─────────────┬────────────┘
+              │
+              ▼
+┌──────────────────────────┐
+│      Text Splitter       │
+│  (RecursiveCharacterTextSplitter) │
+└─────────────┬────────────┘
+              │
+              ▼
+┌──────────────────────────┐
+│  Chunked Text Pieces     │
+└─────────────┬────────────┘
+              │
+              ▼
+┌──────────────────────────┐
+│  Embeddings (Vectors)    │
+│ (HuggingFaceEmbeddings)  │
+└─────────────┬────────────┘
+              │
+              ▼
+┌──────────────────────────┐
+│      FAISS Retriever     │
+│  (Similarity Search)     │
+│ Top-k chunks per query    │
+└─────────────┬────────────┘
+              │
+              ▼
+┌──────────────────────────┐
+│    Build Prompt with     │
+│ retrieved chunks (local) │
+└─────────────┬────────────┘
+              │
+              ▼
+┌──────────────────────────┐
+│  Local Ollama LLM       │
+│   (llama3, CPU/GPU)     │
+│  Receives prompt,        │
+│  generates answer        │
+└─────────────┬────────────┘
+              │
+              ▼
+┌──────────────────────────┐
+│  Answer returned to      │
+│     Python app           │
+└──────────────────────────┘
+
+
+
+⚙️ Detailed Process Breakdown - RAG based solution (with Chroma Vector Store)
+
+1️⃣ Splitting Documents into Chunks
+Raw Kafka documentation (PDFs, text files, or URLs) is first broken into smaller, meaningful sections using the RecursiveCharacterTextSplitter from LangChain.
+📍 Purpose:
+Breaking content into semantically coherent chunks helps the embedding model capture context more effectively and ensures smoother retrieval later.
+(Example: ~1000 characters per chunk, with 200-character overlap.)
+
+2️⃣ Creating Embeddings (Vector Representations)
+Each chunk of text is transformed into a numerical vector (embedding) using a Hugging Face embedding model, such as sentence-transformers/all-mpnet-base-v2.
+These embeddings capture semantic meaning, allowing for similarity-based search instead of keyword matching.
+
+📍 Storage Options:
+
+In-memory, for faster development or experimentation.
+
+Persisted on disk, using Chroma’s local database (persist_directory), so your embeddings can be reloaded instantly without recomputation.
+
+3️⃣ Retriever (Chroma Similarity Search)
+A Chroma vector store serves as the retriever, indexing all embeddings and efficiently finding the most relevant chunks for any user query.
+
+📍 Key Benefit:
+Chroma runs fully locally — no API calls, no network requests.
+It performs a semantic similarity search to find the top-k chunks most relevant to the input question (e.g., k=8).
+
+4️⃣ Prompt Construction (LangChain Orchestration)
+LangChain’s RetrievalQA chain automatically composes a prompt that includes:
+
+The user’s query
+
+The retrieved Chroma chunks (context)
+
+📍 Why this matters:
+This contextual prompt ensures that your LLM’s response is grounded in your own Kafka documentation — not just its pretraining data.
+
+5️⃣ Local LLM via Ollama
+The completed prompt is sent to your local Ollama LLM server (e.g., http://localhost:11434), running a model such as llama3, mistral, or phi3.
+
+Ollama handles text generation entirely on your machine (CPU or GPU).
+📍 Privacy Advantage:
+All processing stays local — no data leaves your environment.
+
+6️⃣ Returning the Answer
+The LLM’s generated response is returned directly to your Python application.
+LangChain’s RetrievalQA handles the full flow — from document loading → embedding → retrieval → prompt building → LLM generation.
+
+📤 Final Output:
+A contextually grounded, accurate answer derived from your local Kafka documentation and stored Chroma embeddings.
