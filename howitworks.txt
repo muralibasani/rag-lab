@@ -4,7 +4,7 @@ AI Assistant - RAG based.
 How it works ?
 
 ┌──────────────────────────┐
-│      Your Kafka Docs     │
+│      Your Docs     │
 │ (txt, PDFs, etc.)        │
 └─────────────┬────────────┘
               │
@@ -57,7 +57,7 @@ How it works ?
 ⚙️ Detailed Process Breakdown - RAG based solution (with Chroma Vector Store)
 
 1️⃣ Splitting Documents into Chunks
-Raw Kafka documentation (PDFs, text files, or URLs) is first broken into smaller, meaningful sections using the RecursiveCharacterTextSplitter from LangChain.
+Raw documentation (PDFs, text files, or URLs) is first broken into smaller, meaningful sections using the RecursiveCharacterTextSplitter from LangChain.
 📍 Purpose:
 Breaking content into semantically coherent chunks helps the embedding model capture context more effectively and ensures smoother retrieval later.
 (Example: ~1000 characters per chunk, with 200-character overlap.)
@@ -87,7 +87,7 @@ The user’s query
 The retrieved Chroma chunks (context)
 
 📍 Why this matters:
-This contextual prompt ensures that your LLM’s response is grounded in your own Kafka documentation — not just its pretraining data.
+This contextual prompt ensures that your LLM’s response is grounded in your own domain documentation — not just its pretraining data.
 
 5️⃣ Local LLM via Ollama
 The completed prompt is sent to your local Ollama LLM server (e.g., http://localhost:11434), running a model such as llama3, mistral, or phi3.
@@ -101,4 +101,4 @@ The LLM’s generated response is returned directly to your Python application.
 LangChain’s RetrievalQA handles the full flow — from document loading → embedding → retrieval → prompt building → LLM generation.
 
 📤 Final Output:
-A contextually grounded, accurate answer derived from your local Kafka documentation and stored Chroma embeddings.
+A contextually grounded, accurate answer derived from your local domain documentation and stored Chroma embeddings.

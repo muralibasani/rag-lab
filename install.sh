@@ -55,6 +55,7 @@ if [ ! -f ".env" ]; then
     cat > .env << EOF
 
 # LLM Assistant Configuration
+.env file.
 
 # Chunking Configuration
 CHUNK_SIZE=2000

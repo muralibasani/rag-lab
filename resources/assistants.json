@@ -6,9 +6,9 @@
       "https://kafka.apache.org/documentation/"
     ],
     "source_files": [
+      "all_docs"
     ],
-    "source_info_type": "text",
-    "model": "llama3:8b",
-    "file_extensions":[]
+    "source_info_type": "text",  
+    "model": "llama3:8b"
   }
 ]
