@@ -80,22 +80,6 @@ def build_vector_store(chunks, assistant_name):
         raise ValueError(f"Unknown VECTOR_EMBEDDINGS_STORAGE: {VECTOR_STORE}")
 
 
-def build_qa_chain(retriever):
-    llm = OllamaLLM(model=LLM_MODEL)
-    prompt = ChatPromptTemplate.from_template(
-        "You are a helpful assistant. Use the following context to answer the question.\n\nContext:\n{context}\n\nQuestion:\n{question}"
-    )
-    return (
-        {
-            "context": lambda x: "\n\n".join([d.page_content for d in retriever._get_relevant_documents(x["question"], run_manager=None)]),
-            "question": lambda x: x["question"]
-        }
-        | prompt
-        | llm
-        | StrOutputParser()
-    )
-
-
 def build_qa_system(assistant_meta):
     console.print("📚 Loading and splitting documents...")
     chunks = load_and_split(assistant_meta["source_urls"], assistant_meta["source_files"], assistant_meta["source_info_type"], assistant_meta["assistant_name"])
@@ -104,9 +88,8 @@ def build_qa_system(assistant_meta):
         exit()
     vectorstore = build_vector_store(chunks, assistant_meta["assistant_name"])
     retriever = vectorstore.as_retriever(search_kwargs={"k": 8})
-    qa_chain = build_qa_chain(retriever)
     console.print("✅ QA system initialized successfully.")
-    return qa_chain, retriever
+    return retriever
 
 
 def load_assistants(file_path="resources/assistants.json"):
@@ -115,8 +98,8 @@ def load_assistants(file_path="resources/assistants.json"):
         assistants = json.load(f)
     for assistant in assistants:
         console.print(f"----------- Loading assistant: {assistant['assistant_name']} --------------")
-        qa, retriever = build_qa_system(assistant)
-        assistant_map[assistant["assistant_name"]] = {"qa": qa, "retriever": retriever, "metadata": assistant}
+        retriever = build_qa_system(assistant)
+        assistant_map[assistant["assistant_name"]] = {"retriever": retriever, "metadata": assistant}
     return assistant_map
 
 
