@@ -87,8 +87,10 @@ python3 app.py
 ### With backend and front end
 uvicorn simple_app:app --reload --host 0.0.0.0 --port 8000
 
-In fe dir : 
-npm start
+In fe dir :
+npm install (install deps)
+
+npm run dev
 
 ## 🧠 Vectordb: Embedding Storage Options
 
