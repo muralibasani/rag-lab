@@ -9,3 +9,6 @@ dist/
 .eggs/
 pip-log.txt
 pip-delete-this-directory.txt
+
+fe-react/node_modules/
+fe-react/.DS_Store

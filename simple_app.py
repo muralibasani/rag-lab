@@ -13,6 +13,13 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import START, MessagesState, StateGraph
 from langchain_core.messages import HumanMessage, AIMessage
 
+# For Api/fe
+from fastapi import APIRouter, Request
+from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
+
+start_cli = False
 
 def get_docs() -> List[Document]:
     file_path='resources/F2510149287.pdf'
@@ -97,12 +104,11 @@ def get_app():
     print(app.get_graph().draw_ascii())
     return app
 
+chat_app = get_app()
+thread_id = uuid.uuid4()
+config = {"configurable": {"thread_id": thread_id}}
 
 def start_chat():
-    app = get_app()
-    thread_id = uuid.uuid4()
-    config = {"configurable": {"thread_id": thread_id}}
-
     while True:
         query = input("🧠 You: ").strip()
         if query.lower() in ["exit", "quit"]:
@@ -110,10 +116,50 @@ def start_chat():
             break
         input_message = HumanMessage(content=query)
 
-        for event in app.stream({"messages": [input_message]}, config, stream_mode="values"):
+        for event in chat_app.stream({"messages": [input_message]}, config, stream_mode="values"):
             answer_message = event["messages"][-1]
             print("\n🤖 Assistant:")
             print(answer_message.content)
 
 init_llm()
-start_chat()
+
+if start_cli:
+    start_chat()
+
+print('Starting App')
+# With Api and uvicorn
+
+app = FastAPI(title='Chat App')
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['http://localhost:5173'],  # React app URL
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+class QueryRequest(BaseModel):
+    question: str
+
+router_ask_q = APIRouter()
+
+@router_ask_q.post("/ask")
+def ask_question(req: QueryRequest, request: Request):
+    print('Question is ', req.question)
+
+    query = req.question
+    input_message = HumanMessage(content=query)
+
+    for event in chat_app.stream({"messages": [input_message]}, config, stream_mode="values"):
+        answer_message = event["messages"][-1]
+        print("\n🤖 Assistant:")
+        print(answer_message.content)
+
+    return {
+        "query": query,
+        "answer": answer_message.content
+    }
+
+app.include_router(router_ask_q)

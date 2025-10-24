@@ -80,9 +80,17 @@ ollama serve
 
 ## 🏃‍♂️ Running the Application
 
-### Start the App
+### Start the App cli
 
 python3 app.py
+
+### With backend and front end
+uvicorn simple_app:app --reload --host 0.0.0.0 --port 8000
+
+In fe dir :
+npm install (install deps)
+
+npm run dev
 
 ## 🧠 Vectordb: Embedding Storage Options
 
@@ -135,6 +143,17 @@ It uses the **Ollama Llama 3** model, downloaded and executed locally — no dat
 ⚠️ **Important:**  
 Do **not** include or scrape other web sources without verifying their license or obtaining explicit permission.  
 This ensures your local assistant remains compliant with open-source and fair-use principles.
+
+## Create a front end project
+Install node and npm (https://nodejs.org/en)
+
+node -v
+npm create vite@latest fe-react
+Select React
+Select TypeScript
+cd fe-react
+npm install
+npm run dev
 
 #### Useful links
 https://reference.langchain.com/python/langchain/
