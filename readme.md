@@ -20,17 +20,18 @@ source install.sh
   
 #### 1. Create Virtual Environment
 
-```bash
-python3 -m venv venv
-source venv/bin/activate   # Linux / macOS
-# or
-venv\Scripts\activate      # Windows
-```
+# Create a virtual environment named .venv
+python3 -m venv .venv
 
-#### 2. Install Dependencies
+# Activate on Linux / macOS
+source .venv/bin/activate
 
-**Modern approach (recommended):**
-```bash
+# Activate on Windows (CMD)
+.venv\Scripts\activate
+
+# Activate on Windows (PowerShell)
+.venv\Scripts\Activate.ps1
+
 pip install --upgrade pip
 pip install -e .
 

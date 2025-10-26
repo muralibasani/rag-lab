@@ -19,7 +19,7 @@ from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI
 
-start_cli = False
+start_cli = True
 
 def get_docs() -> List[Document]:
     file_path='resources/F2510149287.pdf'
