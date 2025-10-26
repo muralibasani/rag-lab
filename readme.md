@@ -36,6 +36,8 @@ pip install -e .
 
 pip install uv
 uv pip install -r pyproject.toml
+or 
+uv sync
 ```
 
 **Traditional approach:**
