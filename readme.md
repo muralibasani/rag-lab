@@ -33,6 +33,9 @@ venv\Scripts\activate      # Windows
 ```bash
 pip install --upgrade pip
 pip install -e .
+
+pip install uv
+uv pip install -r pyproject.toml
 ```
 
 **Traditional approach:**
