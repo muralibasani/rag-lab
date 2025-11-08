@@ -8,7 +8,6 @@ from langchain_text_splitters.character import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain_ollama import ChatOllama
-from langchain_core.prompts import ChatPromptTemplate
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import START, MessagesState, StateGraph
 from langchain_core.messages import HumanMessage, AIMessage
@@ -58,7 +57,7 @@ def init_llm():
     global retriever
     retriever = vectorstore.as_retriever(search_kwargs={"k": 8})
     global llm
-    llm = ChatOllama(model="llama3", model_kwargs={"keep_alive": "-1", "options": {"temperature": 0.8}})
+    llm = ChatOllama(model="llama3", num_ctx=2048, num_predict=256, model_kwargs={"keep_alive": "-1", "options": {"temperature": 0.8}})
 
 
 def call_model(state: MessagesState):
@@ -83,7 +82,7 @@ def call_model(state: MessagesState):
     
     answer = llm.invoke(prompt_text)
 
-    print('Answer is ', answer)
+    # print('Answer is ', answer)
     
     if isinstance(answer, AIMessage):
         answer_text = answer.content
