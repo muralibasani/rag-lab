@@ -13,7 +13,7 @@ With CLI
 ## Workshop 2
 Agentic RAG
 
-Classify data and invoke LLM
+Classify user's kafka related query and invoke LLM
 
 With CLI  
 <img src="workshop2/images/AgenticRag.png" alt="AgenticRAGCli" width="300">

@@ -1,0 +1,848 @@
+[2025-02-17 11:00:00,001] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] sendControllerRegistration: attempting to send ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:00,004] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=3, headerVersion=2) -- ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) with context RequestContext(header=RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=3, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51074-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@6d50e7d1]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=0, connectionId=127.0.0.1:9093-127.0.0.1:51074-0, session=org.apache.kafka.network.Session@7e5f2ad0, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:00,005] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] RegistrationResponseHandler: controller returned error CLUSTER_AUTHORIZATION_FAILED (Cluster authorization failed.) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:00,042] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=3, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=3, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@19197662, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:00,043] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:00,403] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] sendControllerRegistration: attempting to send ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:00,411] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=4, headerVersion=2) -- ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) with context RequestContext(header=RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=4, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51074-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@6d50e7d1]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=0, connectionId=127.0.0.1:9093-127.0.0.1:51074-0, session=org.apache.kafka.network.Session@f5595c8, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:00,412] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] RegistrationResponseHandler: controller returned error CLUSTER_AUTHORIZATION_FAILED (Cluster authorization failed.) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:00,453] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=4, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=4, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@444ee366, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:00,454] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:01,228] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] sendControllerRegistration: attempting to send ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:01,234] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=5, headerVersion=2) -- ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) with context RequestContext(header=RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=5, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51074-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@6d50e7d1]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=0, connectionId=127.0.0.1:9093-127.0.0.1:51074-0, session=org.apache.kafka.network.Session@7f0c6a25, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:01,235] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] RegistrationResponseHandler: controller returned error CLUSTER_AUTHORIZATION_FAILED (Cluster authorization failed.) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:01,263] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=5, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=5, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@2065758a, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:01,266] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:02,844] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] sendControllerRegistration: attempting to send ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:02,848] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=6, headerVersion=2) -- ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) with context RequestContext(header=RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=6, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51074-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@6d50e7d1]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=0, connectionId=127.0.0.1:9093-127.0.0.1:51074-0, session=org.apache.kafka.network.Session@4eb68816, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:02,849] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] RegistrationResponseHandler: controller returned error CLUSTER_AUTHORIZATION_FAILED (Cluster authorization failed.) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:02,896] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=6, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=6, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@3ea19c14, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:02,896] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:06,014] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] sendControllerRegistration: attempting to send ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:06,018] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=7, headerVersion=2) -- ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) with context RequestContext(header=RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=7, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51074-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@6d50e7d1]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=0, connectionId=127.0.0.1:9093-127.0.0.1:51074-0, session=org.apache.kafka.network.Session@3cfec458, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:06,020] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] RegistrationResponseHandler: controller returned error CLUSTER_AUTHORIZATION_FAILED (Cluster authorization failed.) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:06,164] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=7, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=7, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@38528867, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:06,166] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:12,552] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] sendControllerRegistration: attempting to send ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:12,557] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=8, headerVersion=2) -- ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) with context RequestContext(header=RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=8, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51074-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@6d50e7d1]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=0, connectionId=127.0.0.1:9093-127.0.0.1:51074-0, session=org.apache.kafka.network.Session@3459f764, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:12,559] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] RegistrationResponseHandler: controller returned error CLUSTER_AUTHORIZATION_FAILED (Cluster authorization failed.) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:12,594] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=8, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=8, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@7833714a, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:12,595] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:21,604] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=9, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=9, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@580fc174, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:21,606] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:25,114] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] sendControllerRegistration: attempting to send ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:25,118] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=9, headerVersion=2) -- ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) with context RequestContext(header=RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=9, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51074-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@6d50e7d1]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=0, connectionId=127.0.0.1:9093-127.0.0.1:51074-0, session=org.apache.kafka.network.Session@5f1eb690, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:25,119] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] RegistrationResponseHandler: controller returned error CLUSTER_AUTHORIZATION_FAILED (Cluster authorization failed.) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:30,616] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=10, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=10, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@213a1ce9, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:30,617] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:39,627] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=11, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=11, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@77c65a22, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:39,628] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:48,637] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=12, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=12, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@40f91e7f, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:48,640] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:50,463] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] sendControllerRegistration: attempting to send ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:50,464] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=10, headerVersion=2) -- ControllerRegistrationRequestData(controllerId=1, incarnationId=IWMbpzF4ToqIrbFFNo8DPg, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) with context RequestContext(header=RequestHeader(apiKey=CONTROLLER_REGISTRATION, apiVersion=0, clientId=1, correlationId=10, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51074-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@6d50e7d1]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=0, connectionId=127.0.0.1:9093-127.0.0.1:51074-0, session=org.apache.kafka.network.Session@3b790707, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:50,466] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] RegistrationResponseHandler: controller returned error CLUSTER_AUTHORIZATION_FAILED (Cluster authorization failed.) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:57,651] ERROR [ControllerApis nodeId=1] Unexpected error handling request RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=13, headerVersion=2) -- BrokerRegistrationRequestData(brokerId=1, clusterId='TrwUOY4aQTeeYmF8XSUIYQ', incarnationId=owbQ0dcDSn2-dmmV1luAAA, listeners=[Listener(name='PLAINTEXT', host='localhost', port=9092, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)], rack=null, isMigratingZkBroker=false, logDirs=[naIrcTYn4VxKP86ntAzB8Q], previousBrokerEpoch=-1) with context RequestContext(header=RequestHeader(apiKey=BROKER_REGISTRATION, apiVersion=4, clientId=1, correlationId=13, headerVersion=2), connectionId='127.0.0.1:9093-127.0.0.1:51075-0', clientAddress=/127.0.0.1, principal=User:ANONYMOUS, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, clientInformation=ClientInformation(softwareName=apache-kafka-java, softwareVersion=3.9.0), fromPrivilegedListener=false, principalSerde=Optional[org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder@191f6a9]) (kafka.server.ControllerApis)
+org.apache.kafka.common.errors.ClusterAuthorizationException: Request Request(processor=1, connectionId=127.0.0.1:9093-127.0.0.1:51075-0, session=org.apache.kafka.network.Session@47897439, listenerName=ListenerName(CONTROLLER), securityProtocol=PLAINTEXT, buffer=null, envelope=None) is not authorized.
+[2025-02-17 11:00:57,655] INFO [BrokerLifecycleManager id=1] Unable to register broker 1 because the controller returned error CLUSTER_AUTHORIZATION_FAILED (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:59,739] ERROR [BrokerLifecycleManager id=1] Shutting down because we were unable to register with the controller quorum. (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:59,739] INFO [BrokerLifecycleManager id=1] registrationTimeout: shutting down event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,740] INFO [BrokerLifecycleManager id=1] Transitioning from STARTING to SHUTTING_DOWN. (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:00:59,741] ERROR [BrokerServer id=1] Received a fatal error while waiting for the controller to acknowledge that we are caught up (kafka.server.BrokerServer)
+java.util.concurrent.CancellationException
+	at java.base/java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2478)
+	at kafka.server.BrokerLifecycleManager$ShutdownEvent.run(BrokerLifecycleManager.scala:638)
+	at org.apache.kafka.queue.KafkaEventQueue$EventHandler.run(KafkaEventQueue.java:191)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2025-02-17 11:00:59,741] INFO [broker-1-to-controller-heartbeat-channel-manager]: Shutting down (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,742] INFO [BrokerServer id=1] Transition from STARTING to STARTED (kafka.server.BrokerServer)
+[2025-02-17 11:00:59,742] INFO [broker-1-to-controller-heartbeat-channel-manager]: Stopped (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,742] INFO [broker-1-to-controller-heartbeat-channel-manager]: Shutdown completed (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,744] ERROR [BrokerServer id=1] Fatal error during broker startup. Prepare to shutdown (kafka.server.BrokerServer)
+java.lang.RuntimeException: Received a fatal error while waiting for the controller to acknowledge that we are caught up
+	at org.apache.kafka.server.util.FutureUtils.waitWithLogging(FutureUtils.java:73)
+	at kafka.server.BrokerServer.startup(BrokerServer.scala:502)
+	at kafka.server.KafkaRaftServer.$anonfun$startup$2(KafkaRaftServer.scala:99)
+	at kafka.server.KafkaRaftServer.$anonfun$startup$2$adapted(KafkaRaftServer.scala:99)
+	at scala.Option.foreach(Option.scala:407)
+	at kafka.server.KafkaRaftServer.startup(KafkaRaftServer.scala:99)
+	at kafka.Kafka$.main(Kafka.scala:112)
+	at kafka.Kafka.main(Kafka.scala)
+Caused by: java.util.concurrent.CancellationException
+	at java.base/java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2478)
+	at kafka.server.BrokerLifecycleManager$ShutdownEvent.run(BrokerLifecycleManager.scala:638)
+	at org.apache.kafka.queue.KafkaEventQueue$EventHandler.run(KafkaEventQueue.java:191)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2025-02-17 11:00:59,745] INFO [BrokerServer id=1] Transition from STARTED to SHUTTING_DOWN (kafka.server.BrokerServer)
+[2025-02-17 11:00:59,745] INFO [BrokerServer id=1] shutting down (kafka.server.BrokerServer)
+[2025-02-17 11:00:59,747] INFO [SocketServer listenerType=BROKER, nodeId=1] Stopping socket server request processors (kafka.network.SocketServer)
+[2025-02-17 11:00:59,749] ERROR Cannot invoke "java.nio.channels.ServerSocketChannel.close()" because the return value of "kafka.network.Acceptor.serverChannel()" is null (kafka.network.DataPlaneAcceptor)
+java.lang.NullPointerException: Cannot invoke "java.nio.channels.ServerSocketChannel.close()" because the return value of "kafka.network.Acceptor.serverChannel()" is null
+	at kafka.network.Acceptor.$anonfun$closeAll$2(SocketServer.scala:711)
+	at kafka.utils.CoreUtils$.swallow(CoreUtils.scala:68)
+	at kafka.network.Acceptor.closeAll(SocketServer.scala:711)
+	at kafka.network.Acceptor.close(SocketServer.scala:678)
+	at kafka.network.SocketServer.$anonfun$stopProcessingRequests$4(SocketServer.scala:287)
+	at kafka.network.SocketServer.$anonfun$stopProcessingRequests$4$adapted(SocketServer.scala:287)
+	at scala.collection.Iterator.foreach(Iterator.scala:943)
+	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+	at scala.collection.AbstractIterator.foreach(Iterator.scala:1431)
+	at scala.collection.MapLike$DefaultValuesIterable.foreach(MapLike.scala:214)
+	at kafka.network.SocketServer.stopProcessingRequests(SocketServer.scala:287)
+	at kafka.server.BrokerServer.$anonfun$shutdown$5(BrokerServer.scala:638)
+	at kafka.utils.CoreUtils$.swallow(CoreUtils.scala:68)
+	at kafka.server.BrokerServer.shutdown(BrokerServer.scala:638)
+	at kafka.server.KafkaBroker.shutdown(KafkaBroker.scala:98)
+	at kafka.server.KafkaBroker.shutdown$(KafkaBroker.scala:98)
+	at kafka.server.BrokerServer.shutdown(BrokerServer.scala:67)
+	at kafka.server.BrokerServer.startup(BrokerServer.scala:555)
+	at kafka.server.KafkaRaftServer.$anonfun$startup$2(KafkaRaftServer.scala:99)
+	at kafka.server.KafkaRaftServer.$anonfun$startup$2$adapted(KafkaRaftServer.scala:99)
+	at scala.Option.foreach(Option.scala:407)
+	at kafka.server.KafkaRaftServer.startup(KafkaRaftServer.scala:99)
+	at kafka.Kafka$.main(Kafka.scala:112)
+	at kafka.Kafka.main(Kafka.scala)
+[2025-02-17 11:00:59,749] INFO Node to controller channel manager for heartbeat shutdown (kafka.server.NodeToControllerChannelManagerImpl)
+[2025-02-17 11:00:59,753] INFO [SocketServer listenerType=BROKER, nodeId=1] Stopped socket server request processors (kafka.network.SocketServer)
+[2025-02-17 11:00:59,754] INFO [data-plane Kafka Request Handler on Broker 1], shutting down (kafka.server.KafkaRequestHandlerPool)
+[2025-02-17 11:00:59,755] INFO [data-plane Kafka Request Handler on Broker 1], shut down completely (kafka.server.KafkaRequestHandlerPool)
+[2025-02-17 11:00:59,755] INFO [ExpirationReaper-1-AlterAcls]: Shutting down (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,756] INFO [ExpirationReaper-1-AlterAcls]: Stopped (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,756] INFO [ExpirationReaper-1-AlterAcls]: Shutdown completed (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,757] INFO [KafkaApi-1] Shutdown complete. (kafka.server.KafkaApis)
+[2025-02-17 11:00:59,758] INFO [TransactionCoordinator id=1] Shutting down. (kafka.coordinator.transaction.TransactionCoordinator)
+[2025-02-17 11:00:59,759] INFO [Transaction State Manager 1]: Shutdown complete (kafka.coordinator.transaction.TransactionStateManager)
+[2025-02-17 11:00:59,759] INFO [TxnMarkerSenderThread-1]: Shutting down (kafka.coordinator.transaction.TransactionMarkerChannelManager)
+[2025-02-17 11:00:59,759] INFO [TxnMarkerSenderThread-1]: Stopped (kafka.coordinator.transaction.TransactionMarkerChannelManager)
+[2025-02-17 11:00:59,759] INFO [TxnMarkerSenderThread-1]: Shutdown completed (kafka.coordinator.transaction.TransactionMarkerChannelManager)
+[2025-02-17 11:00:59,760] INFO [TransactionCoordinator id=1] Shutdown complete. (kafka.coordinator.transaction.TransactionCoordinator)
+[2025-02-17 11:00:59,761] INFO [GroupCoordinator 1]: Shutting down. (kafka.coordinator.group.GroupCoordinator)
+[2025-02-17 11:00:59,761] INFO [ExpirationReaper-1-Heartbeat]: Shutting down (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,761] INFO [ExpirationReaper-1-Heartbeat]: Stopped (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,761] INFO [ExpirationReaper-1-Heartbeat]: Shutdown completed (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,761] INFO [ExpirationReaper-1-Rebalance]: Shutting down (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,762] INFO [ExpirationReaper-1-Rebalance]: Stopped (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,762] INFO [ExpirationReaper-1-Rebalance]: Shutdown completed (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,762] INFO [GroupCoordinator 1]: Shutdown complete. (kafka.coordinator.group.GroupCoordinator)
+[2025-02-17 11:00:59,762] INFO [AssignmentsManager id=1]KafkaEventQueue#close: shutting down event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,762] INFO [AssignmentsManager id=1] shutting down. (org.apache.kafka.server.AssignmentsManager)
+[2025-02-17 11:00:59,762] INFO [broker-1-to-controller-directory-assignments-channel-manager]: Shutting down (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,762] INFO [broker-1-to-controller-directory-assignments-channel-manager]: Stopped (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,762] INFO [broker-1-to-controller-directory-assignments-channel-manager]: Shutdown completed (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,763] INFO Node to controller channel manager for directory-assignments shutdown (kafka.server.NodeToControllerChannelManagerImpl)
+[2025-02-17 11:00:59,763] INFO [AssignmentsManager id=1]closed event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,763] INFO [ReplicaManager broker=1] Shutting down (kafka.server.ReplicaManager)
+[2025-02-17 11:00:59,763] INFO [LogDirFailureHandler]: Shutting down (kafka.server.ReplicaManager$LogDirFailureHandler)
+[2025-02-17 11:00:59,763] INFO [LogDirFailureHandler]: Stopped (kafka.server.ReplicaManager$LogDirFailureHandler)
+[2025-02-17 11:00:59,763] INFO [LogDirFailureHandler]: Shutdown completed (kafka.server.ReplicaManager$LogDirFailureHandler)
+[2025-02-17 11:00:59,764] INFO [ReplicaFetcherManager on broker 1] shutting down (kafka.server.ReplicaFetcherManager)
+[2025-02-17 11:00:59,764] INFO [ReplicaFetcherManager on broker 1] shutdown completed (kafka.server.ReplicaFetcherManager)
+[2025-02-17 11:00:59,764] INFO [ReplicaAlterLogDirsManager on broker 1] shutting down (kafka.server.ReplicaAlterLogDirsManager)
+[2025-02-17 11:00:59,765] INFO [ReplicaAlterLogDirsManager on broker 1] shutdown completed (kafka.server.ReplicaAlterLogDirsManager)
+[2025-02-17 11:00:59,765] INFO [ExpirationReaper-1-Fetch]: Shutting down (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,765] INFO [ExpirationReaper-1-Fetch]: Stopped (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,765] INFO [ExpirationReaper-1-Fetch]: Shutdown completed (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,765] INFO [ExpirationReaper-1-RemoteFetch]: Shutting down (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,765] INFO [ExpirationReaper-1-RemoteFetch]: Stopped (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,765] INFO [ExpirationReaper-1-RemoteFetch]: Shutdown completed (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,765] INFO [ExpirationReaper-1-Produce]: Shutting down (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,766] INFO [ExpirationReaper-1-Produce]: Stopped (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,766] INFO [ExpirationReaper-1-Produce]: Shutdown completed (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,766] INFO [ExpirationReaper-1-DeleteRecords]: Shutting down (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,766] INFO [ExpirationReaper-1-DeleteRecords]: Stopped (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,766] INFO [ExpirationReaper-1-DeleteRecords]: Shutdown completed (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,766] INFO [ExpirationReaper-1-ElectLeader]: Shutting down (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,766] INFO [ExpirationReaper-1-ElectLeader]: Stopped (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,766] INFO [ExpirationReaper-1-ElectLeader]: Shutdown completed (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,773] INFO [AddPartitionsToTxnSenderThread-1]: Shutting down (kafka.server.AddPartitionsToTxnManager)
+[2025-02-17 11:00:59,773] INFO [AddPartitionsToTxnSenderThread-1]: Stopped (kafka.server.AddPartitionsToTxnManager)
+[2025-02-17 11:00:59,773] INFO [AddPartitionsToTxnSenderThread-1]: Shutdown completed (kafka.server.AddPartitionsToTxnManager)
+[2025-02-17 11:00:59,774] INFO [ReplicaManager broker=1] Shut down completely (kafka.server.ReplicaManager)
+[2025-02-17 11:00:59,774] INFO [broker-1-to-controller-alter-partition-channel-manager]: Shutting down (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,774] INFO [broker-1-to-controller-alter-partition-channel-manager]: Stopped (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,774] INFO [broker-1-to-controller-alter-partition-channel-manager]: Shutdown completed (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,774] INFO Node to controller channel manager for alter-partition shutdown (kafka.server.NodeToControllerChannelManagerImpl)
+[2025-02-17 11:00:59,774] INFO [broker-1-to-controller-forwarding-channel-manager]: Shutting down (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,774] INFO [broker-1-to-controller-forwarding-channel-manager]: Stopped (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,775] INFO [broker-1-to-controller-forwarding-channel-manager]: Shutdown completed (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,775] INFO Node to controller channel manager for forwarding shutdown (kafka.server.NodeToControllerChannelManagerImpl)
+[2025-02-17 11:00:59,775] INFO Shutting down. (kafka.log.LogManager)
+[2025-02-17 11:00:59,776] INFO [kafka-log-cleaner-thread-0]: Shutting down (kafka.log.LogCleaner$CleanerThread)
+[2025-02-17 11:00:59,776] INFO [kafka-log-cleaner-thread-0]: Stopped (kafka.log.LogCleaner$CleanerThread)
+[2025-02-17 11:00:59,776] INFO [kafka-log-cleaner-thread-0]: Shutdown completed (kafka.log.LogCleaner$CleanerThread)
+[2025-02-17 11:00:59,829] INFO Shutdown complete. (kafka.log.LogManager)
+[2025-02-17 11:00:59,829] INFO [broker-1-ThrottledChannelReaper-Fetch]: Shutting down (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-Fetch]: Stopped (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-Fetch]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-Produce]: Shutting down (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-Produce]: Stopped (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-Produce]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-Request]: Shutting down (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-Request]: Stopped (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-Request]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-ControllerMutation]: Shutting down (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-ControllerMutation]: Stopped (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [broker-1-ThrottledChannelReaper-ControllerMutation]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,830] INFO [SocketServer listenerType=BROKER, nodeId=1] Shutting down socket server (kafka.network.SocketServer)
+[2025-02-17 11:00:59,837] INFO [SocketServer listenerType=BROKER, nodeId=1] Shutdown completed (kafka.network.SocketServer)
+[2025-02-17 11:00:59,838] INFO Broker and topic stats closed (kafka.server.BrokerTopicStats)
+[2025-02-17 11:00:59,838] INFO [BrokerLifecycleManager id=1] closed event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,838] INFO [client-metrics-reaper]: Shutting down (org.apache.kafka.server.util.timer.SystemTimerReaper$Reaper)
+[2025-02-17 11:00:59,838] INFO [client-metrics-reaper]: Stopped (org.apache.kafka.server.util.timer.SystemTimerReaper$Reaper)
+[2025-02-17 11:00:59,838] INFO [client-metrics-reaper]: Shutdown completed (org.apache.kafka.server.util.timer.SystemTimerReaper$Reaper)
+[2025-02-17 11:00:59,838] INFO [BrokerServer id=1] shut down completed (kafka.server.BrokerServer)
+[2025-02-17 11:00:59,838] INFO [BrokerServer id=1] Transition from SHUTTING_DOWN to SHUTDOWN (kafka.server.BrokerServer)
+[2025-02-17 11:00:59,838] ERROR Exiting Kafka due to fatal exception during startup. (kafka.Kafka$)
+java.lang.RuntimeException: Received a fatal error while waiting for the controller to acknowledge that we are caught up
+	at org.apache.kafka.server.util.FutureUtils.waitWithLogging(FutureUtils.java:73)
+	at kafka.server.BrokerServer.startup(BrokerServer.scala:502)
+	at kafka.server.KafkaRaftServer.$anonfun$startup$2(KafkaRaftServer.scala:99)
+	at kafka.server.KafkaRaftServer.$anonfun$startup$2$adapted(KafkaRaftServer.scala:99)
+	at scala.Option.foreach(Option.scala:407)
+	at kafka.server.KafkaRaftServer.startup(KafkaRaftServer.scala:99)
+	at kafka.Kafka$.main(Kafka.scala:112)
+	at kafka.Kafka.main(Kafka.scala)
+Caused by: java.util.concurrent.CancellationException
+	at java.base/java.util.concurrent.CompletableFuture.cancel(CompletableFuture.java:2478)
+	at kafka.server.BrokerLifecycleManager$ShutdownEvent.run(BrokerLifecycleManager.scala:638)
+	at org.apache.kafka.queue.KafkaEventQueue$EventHandler.run(KafkaEventQueue.java:191)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2025-02-17 11:00:59,839] INFO [ControllerServer id=1] shutting down (kafka.server.ControllerServer)
+[2025-02-17 11:00:59,839] INFO [raft-expiration-reaper]: Shutting down (kafka.raft.TimingWheelExpirationService$ExpiredOperationReaper)
+[2025-02-17 11:00:59,912] INFO [raft-expiration-reaper]: Stopped (kafka.raft.TimingWheelExpirationService$ExpiredOperationReaper)
+[2025-02-17 11:00:59,912] INFO [raft-expiration-reaper]: Shutdown completed (kafka.raft.TimingWheelExpirationService$ExpiredOperationReaper)
+[2025-02-17 11:00:59,912] INFO [kafka-1-raft-io-thread]: Shutting down (org.apache.kafka.raft.KafkaRaftClientDriver)
+[2025-02-17 11:00:59,912] INFO [RaftManager id=1] Beginning graceful shutdown (org.apache.kafka.raft.KafkaRaftClient)
+[2025-02-17 11:00:59,913] INFO [RaftManager id=1] Graceful shutdown completed (org.apache.kafka.raft.KafkaRaftClient)
+[2025-02-17 11:00:59,913] INFO [RaftManager id=1] Completed graceful shutdown of RaftClient (org.apache.kafka.raft.KafkaRaftClientDriver)
+[2025-02-17 11:00:59,913] INFO [kafka-1-raft-io-thread]: Stopped (org.apache.kafka.raft.KafkaRaftClientDriver)
+[2025-02-17 11:00:59,913] INFO [kafka-1-raft-io-thread]: Shutdown completed (org.apache.kafka.raft.KafkaRaftClientDriver)
+[2025-02-17 11:00:59,923] INFO [kafka-1-raft-outbound-request-thread]: Shutting down (org.apache.kafka.raft.KafkaNetworkChannel$SendThread)
+[2025-02-17 11:00:59,924] INFO [kafka-1-raft-outbound-request-thread]: Stopped (org.apache.kafka.raft.KafkaNetworkChannel$SendThread)
+[2025-02-17 11:00:59,924] INFO [kafka-1-raft-outbound-request-thread]: Shutdown completed (org.apache.kafka.raft.KafkaNetworkChannel$SendThread)
+[2025-02-17 11:00:59,933] INFO [ProducerStateManager partition=__cluster_metadata-0] Wrote producer snapshot at offset 3985 with 0 producer ids in 10 ms. (org.apache.kafka.storage.internals.log.ProducerStateManager)
+[2025-02-17 11:00:59,944] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] beginShutdown: shutting down event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,945] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] shutting down. (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:00:59,945] INFO [controller-1-to-controller-registration-channel-manager]: Shutting down (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,945] INFO [controller-1-to-controller-registration-channel-manager]: Stopped (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,945] INFO [controller-1-to-controller-registration-channel-manager]: Shutdown completed (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,945] INFO Node to controller channel manager for registration shutdown (kafka.server.NodeToControllerChannelManagerImpl)
+[2025-02-17 11:00:59,945] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] closed event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,945] INFO [controller-1-to-controller-registration-channel-manager]: Shutdown completed (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:00:59,945] WARN [NodeToControllerChannelManager id=1 name=registration] Attempting to close NetworkClient that has already been closed. (org.apache.kafka.clients.NetworkClient)
+[2025-02-17 11:00:59,945] INFO Node to controller channel manager for registration shutdown (kafka.server.NodeToControllerChannelManagerImpl)
+[2025-02-17 11:00:59,946] INFO [ControllerRegistrationManager id=1 incarnation=IWMbpzF4ToqIrbFFNo8DPg] closed event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,946] INFO [SocketServer listenerType=CONTROLLER, nodeId=1] Stopping socket server request processors (kafka.network.SocketServer)
+[2025-02-17 11:00:59,948] INFO [SocketServer listenerType=CONTROLLER, nodeId=1] Stopped socket server request processors (kafka.network.SocketServer)
+[2025-02-17 11:00:59,949] INFO [QuorumController id=1] QuorumController#beginShutdown: shutting down event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,949] INFO [SocketServer listenerType=CONTROLLER, nodeId=1] Shutting down socket server (kafka.network.SocketServer)
+[2025-02-17 11:00:59,952] INFO [SocketServer listenerType=CONTROLLER, nodeId=1] Shutdown completed (kafka.network.SocketServer)
+[2025-02-17 11:00:59,952] INFO [data-plane Kafka Request Handler on Broker 1], shutting down (kafka.server.KafkaRequestHandlerPool)
+[2025-02-17 11:00:59,952] INFO [data-plane Kafka Request Handler on Broker 1], shut down completely (kafka.server.KafkaRequestHandlerPool)
+[2025-02-17 11:00:59,953] INFO [ExpirationReaper-1-AlterAcls]: Shutting down (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,953] INFO [ExpirationReaper-1-AlterAcls]: Stopped (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,953] INFO [ExpirationReaper-1-AlterAcls]: Shutdown completed (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-Fetch]: Shutting down (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-Fetch]: Stopped (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-Fetch]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-Produce]: Shutting down (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-Produce]: Stopped (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-Produce]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-Request]: Shutting down (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-Request]: Stopped (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-Request]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-ControllerMutation]: Shutting down (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-ControllerMutation]: Stopped (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [controller-1-ThrottledChannelReaper-ControllerMutation]: Shutdown completed (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:00:59,953] INFO [QuorumController id=1] closed event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,954] INFO [SharedServer id=1] Stopping SharedServer (kafka.server.SharedServer)
+[2025-02-17 11:00:59,954] INFO [MetadataLoader id=1] beginShutdown: shutting down event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,955] INFO [SnapshotGenerator id=1] close: shutting down event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,955] INFO [SnapshotGenerator id=1] closed event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,955] INFO [MetadataLoader id=1] closed event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,955] INFO [SnapshotGenerator id=1] closed event queue. (org.apache.kafka.queue.KafkaEventQueue)
+[2025-02-17 11:00:59,955] INFO Metrics scheduler closed (org.apache.kafka.common.metrics.Metrics)
+[2025-02-17 11:00:59,955] INFO Closing reporter org.apache.kafka.common.metrics.JmxReporter (org.apache.kafka.common.metrics.Metrics)
+[2025-02-17 11:00:59,956] INFO Metrics reporters closed (org.apache.kafka.common.metrics.Metrics)
+[2025-02-17 11:00:59,956] INFO App info kafka.server for 1 unregistered (org.apache.kafka.common.utils.AppInfoParser)
+[2025-02-17 11:00:59,956] INFO App info kafka.server for 1 unregistered (org.apache.kafka.common.utils.AppInfoParser)
+[2025-02-17 11:52:28,612] INFO Registered kafka:type=kafka.Log4jController MBean (kafka.utils.Log4jControllerRegistration$)
+[2025-02-17 11:52:28,731] INFO Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation (org.apache.zookeeper.common.X509Util)
+[2025-02-17 11:52:28,801] INFO Registered signal handlers for TERM, INT, HUP (org.apache.kafka.common.utils.LoggingSignalHandler)
+[2025-02-17 11:52:28,802] INFO [ControllerServer id=1] Starting controller (kafka.server.ControllerServer)
+[2025-02-17 11:52:28,813] INFO [StandardAuthorizer 1] set super.users=, default result=ALLOWED (org.apache.kafka.metadata.authorizer.StandardAuthorizerData)
+[2025-02-17 11:52:28,988] INFO Updated connection-accept-rate max connection creation rate to 2147483647 (kafka.network.ConnectionQuotas)
+[2025-02-17 11:52:29,006] INFO [SocketServer listenerType=CONTROLLER, nodeId=1] Created data-plane acceptor and processors for endpoint : ListenerName(CONTROLLER) (kafka.network.SocketServer)
+[2025-02-17 11:52:29,010] INFO authorizerStart completed for endpoint CONTROLLER. Endpoint is now READY. (org.apache.kafka.server.network.EndpointReadyFutures)
+[2025-02-17 11:52:29,011] INFO [SharedServer id=1] Starting SharedServer (kafka.server.SharedServer)
+[2025-02-17 11:52:29,035] INFO [LogLoader partition=__cluster_metadata-0, dir=/tmp/kraft-combined-logs] Recovering unflushed segment 0. 0/1 recovered for __cluster_metadata-0. (kafka.log.LogLoader)
+[2025-02-17 11:52:29,036] INFO [LogLoader partition=__cluster_metadata-0, dir=/tmp/kraft-combined-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+[2025-02-17 11:52:29,036] INFO [LogLoader partition=__cluster_metadata-0, dir=/tmp/kraft-combined-logs] Reloading from producer snapshot and rebuilding producer state from offset 0 (kafka.log.UnifiedLog$)
+[2025-02-17 11:52:29,036] INFO Deleted producer state snapshot /tmp/kraft-combined-logs/__cluster_metadata-0/00000000000000003865.snapshot (org.apache.kafka.storage.internals.log.SnapshotFile)
+[2025-02-17 11:52:29,036] INFO Deleted producer state snapshot /tmp/kraft-combined-logs/__cluster_metadata-0/00000000000000003985.snapshot (org.apache.kafka.storage.internals.log.SnapshotFile)
+[2025-02-17 11:52:29,036] INFO [LogLoader partition=__cluster_metadata-0, dir=/tmp/kraft-combined-logs] Producer state recovery took 0ms for snapshot load and 0ms for segment recovery from offset 0 (kafka.log.UnifiedLog$)
+[2025-02-17 11:52:29,073] INFO [ProducerStateManager partition=__cluster_metadata-0] Wrote producer snapshot at offset 3985 with 0 producer ids in 11 ms. (org.apache.kafka.storage.internals.log.ProducerStateManager)
+[2025-02-17 11:52:29,078] INFO [LogLoader partition=__cluster_metadata-0, dir=/tmp/kraft-combined-logs] Loading producer state till offset 3985 with message format version 2 (kafka.log.UnifiedLog$)
+[2025-02-17 11:52:29,078] INFO [LogLoader partition=__cluster_metadata-0, dir=/tmp/kraft-combined-logs] Reloading from producer snapshot and rebuilding producer state from offset 3985 (kafka.log.UnifiedLog$)
+[2025-02-17 11:52:29,078] INFO [ProducerStateManager partition=__cluster_metadata-0] Loading producer state from snapshot file 'SnapshotFile(offset=3985, file=/tmp/kraft-combined-logs/__cluster_metadata-0/00000000000000003985.snapshot)' (org.apache.kafka.storage.internals.log.ProducerStateManager)
+[2025-02-17 11:52:29,079] INFO [LogLoader partition=__cluster_metadata-0, dir=/tmp/kraft-combined-logs] Producer state recovery took 1ms for snapshot load and 0ms for segment recovery from offset 3985 (kafka.log.UnifiedLog$)
+[2025-02-17 11:52:29,094] INFO Initialized snapshots with IDs Set() from /tmp/kraft-combined-logs/__cluster_metadata-0 (kafka.raft.KafkaMetadataLog$)
+[2025-02-17 11:52:29,099] INFO [raft-expiration-reaper]: Starting (kafka.raft.TimingWheelExpirationService$ExpiredOperationReaper)
+[2025-02-17 11:52:29,104] INFO [RaftManager id=1] Reading KRaft snapshot and log as part of the initialization (org.apache.kafka.raft.KafkaRaftClient)
+[2025-02-17 11:52:29,126] INFO [RaftManager id=1] Starting voters are VoterSet(voters={1=VoterNode(voterKey=ReplicaKey(id=1, directoryId=Optional.empty), listeners=Endpoints(endpoints={ListenerName(CONTROLLER)=localhost/127.0.0.1:9093}), supportedKRaftVersion=SupportedVersionRange[min_version:0, max_version:0])}) (org.apache.kafka.raft.KafkaRaftClient)
+[2025-02-17 11:52:29,126] INFO [RaftManager id=1] Starting request manager with static voters: [localhost:9093 (id: 1 rack: null)] (org.apache.kafka.raft.KafkaRaftClient)
+[2025-02-17 11:52:29,184] INFO [RaftManager id=1] Attempting durable transition to ResignedState(localId=1, epoch=4, voters=[1], electionTimeoutMs=1903, unackedVoters=[], preferredSuccessors=[]) from null (org.apache.kafka.raft.QuorumState)
+[2025-02-17 11:52:29,201] INFO [RaftManager id=1] Completed transition to ResignedState(localId=1, epoch=4, voters=[1], electionTimeoutMs=1903, unackedVoters=[], preferredSuccessors=[]) from null (org.apache.kafka.raft.QuorumState)
+[2025-02-17 11:52:29,202] INFO [RaftManager id=1] Attempting durable transition to CandidateState(localId=1, localDirectoryId=naIrcTYn4VxKP86ntAzB8Q,epoch=5, retries=1, voteStates={1=org.apache.kafka.raft.CandidateState$VoterState@9a6fbc0}, highWatermark=Optional.empty, electionTimeoutMs=1849) from ResignedState(localId=1, epoch=4, voters=[1], electionTimeoutMs=1903, unackedVoters=[], preferredSuccessors=[]) (org.apache.kafka.raft.QuorumState)
+[2025-02-17 11:52:29,208] INFO [RaftManager id=1] Completed transition to CandidateState(localId=1, localDirectoryId=naIrcTYn4VxKP86ntAzB8Q,epoch=5, retries=1, voteStates={1=org.apache.kafka.raft.CandidateState$VoterState@9a6fbc0}, highWatermark=Optional.empty, electionTimeoutMs=1849) from ResignedState(localId=1, epoch=4, voters=[1], electionTimeoutMs=1903, unackedVoters=[], preferredSuccessors=[]) (org.apache.kafka.raft.QuorumState)
+[2025-02-17 11:52:29,210] INFO [RaftManager id=1] Attempting durable transition to Leader(localReplicaKey=ReplicaKey(id=1, directoryId=Optional[naIrcTYn4VxKP86ntAzB8Q]), epoch=5, epochStartOffset=3985, highWatermark=Optional.empty, voterStates={1=ReplicaState(replicaKey=ReplicaKey(id=1, directoryId=Optional.empty), endOffset=Optional.empty, lastFetchTimestamp=-1, lastCaughtUpTimestamp=-1, hasAcknowledgedLeader=true)}) from CandidateState(localId=1, localDirectoryId=naIrcTYn4VxKP86ntAzB8Q,epoch=5, retries=1, voteStates={1=org.apache.kafka.raft.CandidateState$VoterState@9a6fbc0}, highWatermark=Optional.empty, electionTimeoutMs=1849) (org.apache.kafka.raft.QuorumState)
+[2025-02-17 11:52:29,217] INFO [RaftManager id=1] Completed transition to Leader(localReplicaKey=ReplicaKey(id=1, directoryId=Optional[naIrcTYn4VxKP86ntAzB8Q]), epoch=5, epochStartOffset=3985, highWatermark=Optional.empty, voterStates={1=ReplicaState(replicaKey=ReplicaKey(id=1, directoryId=Optional.empty), endOffset=Optional.empty, lastFetchTimestamp=-1, lastCaughtUpTimestamp=-1, hasAcknowledgedLeader=true)}) from CandidateState(localId=1, localDirectoryId=naIrcTYn4VxKP86ntAzB8Q,epoch=5, retries=1, voteStates={1=org.apache.kafka.raft.CandidateState$VoterState@9a6fbc0}, highWatermark=Optional.empty, electionTimeoutMs=1849) (org.apache.kafka.raft.QuorumState)
+[2025-02-17 11:52:29,232] INFO [kafka-1-raft-outbound-request-thread]: Starting (org.apache.kafka.raft.KafkaNetworkChannel$SendThread)
+[2025-02-17 11:52:29,232] INFO [kafka-1-raft-io-thread]: Starting (org.apache.kafka.raft.KafkaRaftClientDriver)
+[2025-02-17 11:52:29,239] INFO [MetadataLoader id=1] initializeNewPublishers: the loader is still catching up because we still don't know the high water mark yet. (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,240] INFO [ControllerServer id=1] Waiting for controller quorum voters future (kafka.server.ControllerServer)
+[2025-02-17 11:52:29,240] INFO [ControllerServer id=1] Finished waiting for controller quorum voters future (kafka.server.ControllerServer)
+[2025-02-17 11:52:29,244] INFO [RaftManager id=1] High watermark set to LogOffsetMetadata(offset=3986, metadata=Optional[(segmentBaseOffset=0,relativePositionInSegment=287073)]) for the first time for epoch 5 based on indexOfHw 0 and voters [ReplicaState(replicaKey=ReplicaKey(id=1, directoryId=Optional.empty), endOffset=Optional[LogOffsetMetadata(offset=3986, metadata=Optional[(segmentBaseOffset=0,relativePositionInSegment=287073)])], lastFetchTimestamp=-1, lastCaughtUpTimestamp=-1, hasAcknowledgedLeader=true)] (org.apache.kafka.raft.LeaderState)
+[2025-02-17 11:52:29,257] INFO [controller-1-ThrottledChannelReaper-Fetch]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:52:29,258] INFO [controller-1-ThrottledChannelReaper-ControllerMutation]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:52:29,257] INFO [controller-1-ThrottledChannelReaper-Request]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:52:29,257] INFO [controller-1-ThrottledChannelReaper-Produce]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:52:29,261] INFO [RaftManager id=1] Registered the listener org.apache.kafka.image.loader.MetadataLoader@2043303822 (org.apache.kafka.raft.KafkaRaftClient)
+[2025-02-17 11:52:29,261] INFO [RaftManager id=1] Registered the listener org.apache.kafka.controller.QuorumController$QuorumMetaLogListener@140469567 (org.apache.kafka.raft.KafkaRaftClient)
+[2025-02-17 11:52:29,262] INFO [RaftManager id=1] Setting the next offset of org.apache.kafka.image.loader.MetadataLoader@2043303822 to 0 since there are no snapshots (org.apache.kafka.raft.KafkaRaftClient)
+[2025-02-17 11:52:29,263] INFO [RaftManager id=1] Setting the next offset of org.apache.kafka.controller.QuorumController$QuorumMetaLogListener@140469567 to 0 since there are no snapshots (org.apache.kafka.raft.KafkaRaftClient)
+[2025-02-17 11:52:29,263] INFO [MetadataLoader id=1] maybePublishMetadata(LOG_DELTA): The loader is still catching up because we have loaded up to offset 0, but the high water mark is 3986 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,268] INFO [ExpirationReaper-1-AlterAcls]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:52:29,276] INFO [ControllerServer id=1] Waiting for the controller metadata publishers to be installed (kafka.server.ControllerServer)
+[2025-02-17 11:52:29,296] INFO [MetadataLoader id=1] maybePublishMetadata(LOG_DELTA): The loader finished catching up to the current high water mark of 3986 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,298] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing SnapshotGenerator with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,298] INFO [ControllerServer id=1] Finished waiting for the controller metadata publishers to be installed (kafka.server.ControllerServer)
+[2025-02-17 11:52:29,298] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing KRaftMetadataCachePublisher with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,298] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing FeaturesPublisher with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,298] INFO [ControllerServer id=1] Loaded new metadata Features(metadataVersion=3.9-IV0, finalizedFeatures={metadata.version=21}, finalizedFeaturesEpoch=3985). (org.apache.kafka.metadata.publisher.FeaturesPublisher)
+[2025-02-17 11:52:29,298] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing ControllerRegistrationsPublisher with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,298] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing ControllerRegistrationManager with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,298] INFO [SocketServer listenerType=CONTROLLER, nodeId=1] Enabling request processing. (kafka.network.SocketServer)
+[2025-02-17 11:52:29,299] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing DynamicConfigPublisher controller id=1 with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,299] INFO [ControllerRegistrationManager id=1 incarnation=6HaC90XmSSu1vLCUIwhbWQ] Found registration for rDymKjK0SzCSPbtIPH3SeA instead of our incarnation. (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:52:29,299] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing DynamicClientQuotaPublisher controller id=1 with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,299] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing ScramPublisher controller id=1 with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,300] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing DelegationTokenPublisher controller id=1 with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,300] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing ControllerMetadataMetricsPublisher with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,301] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing AclPublisher controller id=1 with a snapshot at offset 3985 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,301] INFO [AclPublisher controller id=1] Loading authorizer snapshot at offset 3985 (kafka.server.metadata.AclPublisher)
+[2025-02-17 11:52:29,301] INFO [StandardAuthorizer 1] Initialized with 0 acl(s). (org.apache.kafka.metadata.authorizer.StandardAuthorizerData)
+[2025-02-17 11:52:29,301] INFO [StandardAuthorizer 1] Completed initial ACL load process. (org.apache.kafka.metadata.authorizer.StandardAuthorizerData)
+[2025-02-17 11:52:29,301] INFO Awaiting socket connections on 0.0.0.0:9093. (kafka.network.DataPlaneAcceptor)
+[2025-02-17 11:52:29,312] INFO [controller-1-to-controller-registration-channel-manager]: Starting (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:52:29,312] INFO [ControllerServer id=1] Waiting for all of the authorizer futures to be completed (kafka.server.ControllerServer)
+[2025-02-17 11:52:29,312] INFO [ControllerServer id=1] Finished waiting for all of the authorizer futures to be completed (kafka.server.ControllerServer)
+[2025-02-17 11:52:29,312] INFO [ControllerServer id=1] Waiting for all of the SocketServer Acceptors to be started (kafka.server.ControllerServer)
+[2025-02-17 11:52:29,312] INFO [ControllerServer id=1] Finished waiting for all of the SocketServer Acceptors to be started (kafka.server.ControllerServer)
+[2025-02-17 11:52:29,312] INFO [ControllerRegistrationManager id=1 incarnation=6HaC90XmSSu1vLCUIwhbWQ] initialized channel manager. (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:52:29,313] INFO [controller-1-to-controller-registration-channel-manager]: Recorded new KRaft controller, from now on will use node localhost:9093 (id: 1 rack: null) (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:52:29,313] INFO [BrokerServer id=1] Transition from SHUTDOWN to STARTING (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,313] INFO [BrokerServer id=1] Starting broker (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,313] INFO [ControllerRegistrationManager id=1 incarnation=6HaC90XmSSu1vLCUIwhbWQ] sendControllerRegistration: attempting to send ControllerRegistrationRequestData(controllerId=1, incarnationId=6HaC90XmSSu1vLCUIwhbWQ, zkMigrationReady=false, listeners=[Listener(name='CONTROLLER', host='localhost', port=9093, securityProtocol=0)], features=[Feature(name='kraft.version', minSupportedVersion=0, maxSupportedVersion=1), Feature(name='metadata.version', minSupportedVersion=1, maxSupportedVersion=21)]) (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:52:29,316] INFO [broker-1-ThrottledChannelReaper-Fetch]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:52:29,316] INFO [broker-1-ThrottledChannelReaper-Produce]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:52:29,316] INFO [broker-1-ThrottledChannelReaper-Request]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:52:29,316] INFO [broker-1-ThrottledChannelReaper-ControllerMutation]: Starting (kafka.server.ClientQuotaManager$ThrottledChannelReaper)
+[2025-02-17 11:52:29,329] INFO [BrokerServer id=1] Waiting for controller quorum voters future (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,329] INFO [BrokerServer id=1] Finished waiting for controller quorum voters future (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,329] INFO [broker-1-to-controller-forwarding-channel-manager]: Starting (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:52:29,329] INFO [broker-1-to-controller-forwarding-channel-manager]: Recorded new KRaft controller, from now on will use node localhost:9093 (id: 1 rack: null) (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:52:29,334] INFO [client-metrics-reaper]: Starting (org.apache.kafka.server.util.timer.SystemTimerReaper$Reaper)
+[2025-02-17 11:52:29,350] INFO Updated connection-accept-rate max connection creation rate to 2147483647 (kafka.network.ConnectionQuotas)
+[2025-02-17 11:52:29,352] INFO [SocketServer listenerType=BROKER, nodeId=1] Created data-plane acceptor and processors for endpoint : ListenerName(PLAINTEXT) (kafka.network.SocketServer)
+[2025-02-17 11:52:29,354] INFO [broker-1-to-controller-alter-partition-channel-manager]: Starting (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:52:29,354] INFO [broker-1-to-controller-alter-partition-channel-manager]: Recorded new KRaft controller, from now on will use node localhost:9093 (id: 1 rack: null) (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:52:29,357] INFO [broker-1-to-controller-directory-assignments-channel-manager]: Starting (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:52:29,357] INFO [broker-1-to-controller-directory-assignments-channel-manager]: Recorded new KRaft controller, from now on will use node localhost:9093 (id: 1 rack: null) (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:52:29,364] INFO [ExpirationReaper-1-Produce]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:52:29,364] INFO [ExpirationReaper-1-Fetch]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:52:29,364] INFO [ExpirationReaper-1-DeleteRecords]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:52:29,364] INFO [ExpirationReaper-1-ElectLeader]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:52:29,365] INFO [ExpirationReaper-1-RemoteFetch]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:52:29,373] INFO [ExpirationReaper-1-Heartbeat]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:52:29,373] INFO [ExpirationReaper-1-Rebalance]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:52:29,384] INFO [ControllerRegistrationManager id=1 incarnation=6HaC90XmSSu1vLCUIwhbWQ] Our registration has been persisted to the metadata log. (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:52:29,385] INFO [ControllerRegistrationManager id=1 incarnation=6HaC90XmSSu1vLCUIwhbWQ] RegistrationResponseHandler: controller acknowledged ControllerRegistrationRequest. (kafka.server.ControllerRegistrationManager)
+[2025-02-17 11:52:29,411] INFO [broker-1-to-controller-heartbeat-channel-manager]: Starting (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:52:29,411] INFO [broker-1-to-controller-heartbeat-channel-manager]: Recorded new KRaft controller, from now on will use node localhost:9093 (id: 1 rack: null) (kafka.server.NodeToControllerRequestThread)
+[2025-02-17 11:52:29,411] INFO [StandardAuthorizer 1] set super.users=, default result=ALLOWED (org.apache.kafka.metadata.authorizer.StandardAuthorizerData)
+[2025-02-17 11:52:29,412] INFO [BrokerLifecycleManager id=1] Incarnation fehx-7tMTQ6jWdIjK9hgSw of broker 1 in cluster TrwUOY4aQTeeYmF8XSUIYQ is now STARTING. (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:52:29,420] INFO [ExpirationReaper-1-AlterAcls]: Starting (kafka.server.DelayedOperationPurgatory$ExpiredOperationReaper)
+[2025-02-17 11:52:29,428] INFO [BrokerServer id=1] Waiting for the broker metadata publishers to be installed (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,428] INFO [BrokerServer id=1] Finished waiting for the broker metadata publishers to be installed (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,428] INFO [BrokerServer id=1] Waiting for the controller to acknowledge that we are caught up (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,428] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing MetadataVersionPublisher(id=1) with a snapshot at offset 3986 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,428] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing BrokerMetadataPublisher with a snapshot at offset 3986 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,428] INFO [BrokerMetadataPublisher id=1] Publishing initial metadata at offset OffsetAndEpoch(offset=3986, epoch=5) with metadata.version 3.9-IV0. (kafka.server.metadata.BrokerMetadataPublisher)
+[2025-02-17 11:52:29,429] INFO Loading logs from log dirs ArrayBuffer(/tmp/kraft-combined-logs) (kafka.log.LogManager)
+[2025-02-17 11:52:29,431] INFO Skipping recovery of 1 logs from /tmp/kraft-combined-logs since clean shutdown file was found (kafka.log.LogManager)
+[2025-02-17 11:52:29,436] INFO [LogLoader partition=testtopic-0, dir=/tmp/kraft-combined-logs] Loading producer state till offset 0 with message format version 2 (kafka.log.UnifiedLog$)
+[2025-02-17 11:52:29,439] INFO Completed load of Log(dir=/tmp/kraft-combined-logs/testtopic-0, topicId=36aszMSaT-2O7jP9sWSP7Q, topic=testtopic, partition=0, highWatermark=0, lastStableOffset=0, logStartOffset=0, logEndOffset=0) with 1 segments, local-log-start-offset 0 and log-end-offset 0 in 4ms (1/1 completed in /tmp/kraft-combined-logs) (kafka.log.LogManager)
+[2025-02-17 11:52:29,440] INFO Loaded 1 logs in 11ms (kafka.log.LogManager)
+[2025-02-17 11:52:29,440] INFO Starting log cleanup with a period of 300000 ms. (kafka.log.LogManager)
+[2025-02-17 11:52:29,440] INFO Starting log flusher with a default period of 9223372036854775807 ms. (kafka.log.LogManager)
+[2025-02-17 11:52:29,447] INFO [BrokerLifecycleManager id=1] Successfully registered broker 1 with broker epoch 3987 (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:52:29,457] INFO [kafka-log-cleaner-thread-0]: Starting (kafka.log.LogCleaner$CleanerThread)
+[2025-02-17 11:52:29,458] INFO [LogDirFailureHandler]: Starting (kafka.server.ReplicaManager$LogDirFailureHandler)
+[2025-02-17 11:52:29,459] INFO [AddPartitionsToTxnSenderThread-1]: Starting (kafka.server.AddPartitionsToTxnManager)
+[2025-02-17 11:52:29,459] INFO [GroupCoordinator 1]: Starting up. (kafka.coordinator.group.GroupCoordinator)
+[2025-02-17 11:52:29,460] INFO [GroupCoordinator 1]: Startup complete. (kafka.coordinator.group.GroupCoordinator)
+[2025-02-17 11:52:29,460] INFO [TransactionCoordinator id=1] Starting up. (kafka.coordinator.transaction.TransactionCoordinator)
+[2025-02-17 11:52:29,460] INFO [TxnMarkerSenderThread-1]: Starting (kafka.coordinator.transaction.TransactionMarkerChannelManager)
+[2025-02-17 11:52:29,460] INFO [TransactionCoordinator id=1] Startup complete. (kafka.coordinator.transaction.TransactionCoordinator)
+[2025-02-17 11:52:29,471] INFO [Partition testtopic-0 broker=1] Log loaded for partition testtopic-0 with initial high watermark 0 (kafka.cluster.Partition)
+[2025-02-17 11:52:29,471] INFO [ReplicaFetcherManager on broker 1] Removed fetcher for partitions Set(testtopic-0) (kafka.server.ReplicaFetcherManager)
+[2025-02-17 11:52:29,477] INFO [AclPublisher broker id=1] Loading authorizer snapshot at offset 3986 (kafka.server.metadata.AclPublisher)
+[2025-02-17 11:52:29,477] INFO [StandardAuthorizer 1] Initialized with 0 acl(s). (org.apache.kafka.metadata.authorizer.StandardAuthorizerData)
+[2025-02-17 11:52:29,477] INFO [StandardAuthorizer 1] Completed initial ACL load process. (org.apache.kafka.metadata.authorizer.StandardAuthorizerData)
+[2025-02-17 11:52:29,477] INFO [MetadataLoader id=1] InitializeNewPublishers: initializing BrokerRegistrationTracker(id=1) with a snapshot at offset 3986 (org.apache.kafka.image.loader.MetadataLoader)
+[2025-02-17 11:52:29,491] INFO [BrokerLifecycleManager id=1] The broker has caught up. Transitioning from STARTING to RECOVERY. (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:52:29,491] INFO [BrokerServer id=1] Finished waiting for the controller to acknowledge that we are caught up (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,492] INFO [BrokerServer id=1] Waiting for the initial broker metadata update to be published (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,492] INFO [BrokerServer id=1] Finished waiting for the initial broker metadata update to be published (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,492] INFO KafkaConfig values: 
+	advertised.listeners = PLAINTEXT://localhost:9092,CONTROLLER://localhost:9093
+	alter.config.policy.class.name = null
+	alter.log.dirs.replication.quota.window.num = 11
+	alter.log.dirs.replication.quota.window.size.seconds = 1
+	authorizer.class.name = org.apache.kafka.metadata.authorizer.StandardAuthorizer
+	auto.create.topics.enable = true
+	auto.include.jmx.reporter = true
+	auto.leader.rebalance.enable = true
+	background.threads = 10
+	broker.heartbeat.interval.ms = 2000
+	broker.id = 1
+	broker.id.generation.enable = true
+	broker.rack = null
+	broker.session.timeout.ms = 9000
+	client.quota.callback.class = null
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = producer
+	compression.zstd.level = 3
+	connection.failed.authentication.delay.ms = 100
+	connections.max.idle.ms = 600000
+	connections.max.reauth.ms = 0
+	control.plane.listener.name = null
+	controlled.shutdown.enable = true
+	controlled.shutdown.max.retries = 3
+	controlled.shutdown.retry.backoff.ms = 5000
+	controller.listener.names = CONTROLLER
+	controller.quorum.append.linger.ms = 25
+	controller.quorum.bootstrap.servers = []
+	controller.quorum.election.backoff.max.ms = 1000
+	controller.quorum.election.timeout.ms = 1000
+	controller.quorum.fetch.timeout.ms = 2000
+	controller.quorum.request.timeout.ms = 2000
+	controller.quorum.retry.backoff.ms = 20
+	controller.quorum.voters = [1@localhost:9093]
+	controller.quota.window.num = 11
+	controller.quota.window.size.seconds = 1
+	controller.socket.timeout.ms = 30000
+	create.topic.policy.class.name = null
+	default.replication.factor = 1
+	delegation.token.expiry.check.interval.ms = 3600000
+	delegation.token.expiry.time.ms = 86400000
+	delegation.token.master.key = null
+	delegation.token.max.lifetime.ms = 604800000
+	delegation.token.secret.key = null
+	delete.records.purgatory.purge.interval.requests = 1
+	delete.topic.enable = true
+	early.start.listeners = null
+	eligible.leader.replicas.enable = false
+	fetch.max.bytes = 57671680
+	fetch.purgatory.purge.interval.requests = 1000
+	group.consumer.assignors = [org.apache.kafka.coordinator.group.assignor.UniformAssignor, org.apache.kafka.coordinator.group.assignor.RangeAssignor]
+	group.consumer.heartbeat.interval.ms = 5000
+	group.consumer.max.heartbeat.interval.ms = 15000
+	group.consumer.max.session.timeout.ms = 60000
+	group.consumer.max.size = 2147483647
+	group.consumer.migration.policy = disabled
+	group.consumer.min.heartbeat.interval.ms = 5000
+	group.consumer.min.session.timeout.ms = 45000
+	group.consumer.session.timeout.ms = 45000
+	group.coordinator.append.linger.ms = 10
+	group.coordinator.new.enable = false
+	group.coordinator.rebalance.protocols = [classic]
+	group.coordinator.threads = 1
+	group.initial.rebalance.delay.ms = 3000
+	group.max.session.timeout.ms = 1800000
+	group.max.size = 2147483647
+	group.min.session.timeout.ms = 6000
+	group.share.delivery.count.limit = 5
+	group.share.enable = false
+	group.share.heartbeat.interval.ms = 5000
+	group.share.max.groups = 10
+	group.share.max.heartbeat.interval.ms = 15000
+	group.share.max.record.lock.duration.ms = 60000
+	group.share.max.session.timeout.ms = 60000
+	group.share.max.size = 200
+	group.share.min.heartbeat.interval.ms = 5000
+	group.share.min.record.lock.duration.ms = 15000
+	group.share.min.session.timeout.ms = 45000
+	group.share.partition.max.record.locks = 200
+	group.share.record.lock.duration.ms = 30000
+	group.share.session.timeout.ms = 45000
+	initial.broker.registration.timeout.ms = 60000
+	inter.broker.listener.name = PLAINTEXT
+	inter.broker.protocol.version = 3.9-IV0
+	kafka.metrics.polling.interval.secs = 10
+	kafka.metrics.reporters = []
+	leader.imbalance.check.interval.seconds = 300
+	leader.imbalance.per.broker.percentage = 10
+	listener.security.protocol.map = CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+	listeners = PLAINTEXT://:9092,CONTROLLER://:9093
+	log.cleaner.backoff.ms = 15000
+	log.cleaner.dedupe.buffer.size = 134217728
+	log.cleaner.delete.retention.ms = 86400000
+	log.cleaner.enable = true
+	log.cleaner.io.buffer.load.factor = 0.9
+	log.cleaner.io.buffer.size = 524288
+	log.cleaner.io.max.bytes.per.second = 1.7976931348623157E308
+	log.cleaner.max.compaction.lag.ms = 9223372036854775807
+	log.cleaner.min.cleanable.ratio = 0.5
+	log.cleaner.min.compaction.lag.ms = 0
+	log.cleaner.threads = 1
+	log.cleanup.policy = [delete]
+	log.dir = /tmp/kafka-logs
+	log.dir.failure.timeout.ms = 30000
+	log.dirs = /tmp/kraft-combined-logs
+	log.flush.interval.messages = 9223372036854775807
+	log.flush.interval.ms = null
+	log.flush.offset.checkpoint.interval.ms = 60000
+	log.flush.scheduler.interval.ms = 9223372036854775807
+	log.flush.start.offset.checkpoint.interval.ms = 60000
+	log.index.interval.bytes = 4096
+	log.index.size.max.bytes = 10485760
+	log.initial.task.delay.ms = 30000
+	log.local.retention.bytes = -2
+	log.local.retention.ms = -2
+	log.message.downconversion.enable = true
+	log.message.format.version = 3.0-IV1
+	log.message.timestamp.after.max.ms = 9223372036854775807
+	log.message.timestamp.before.max.ms = 9223372036854775807
+	log.message.timestamp.difference.max.ms = 9223372036854775807
+	log.message.timestamp.type = CreateTime
+	log.preallocate = false
+	log.retention.bytes = -1
+	log.retention.check.interval.ms = 300000
+	log.retention.hours = 168
+	log.retention.minutes = null
+	log.retention.ms = null
+	log.roll.hours = 168
+	log.roll.jitter.hours = 0
+	log.roll.jitter.ms = null
+	log.roll.ms = null
+	log.segment.bytes = 1073741824
+	log.segment.delete.delay.ms = 60000
+	max.connection.creation.rate = 2147483647
+	max.connections = 2147483647
+	max.connections.per.ip = 2147483647
+	max.connections.per.ip.overrides = 
+	max.incremental.fetch.session.cache.slots = 1000
+	max.request.partition.size.limit = 2000
+	message.max.bytes = 1048588
+	metadata.log.dir = null
+	metadata.log.max.record.bytes.between.snapshots = 20971520
+	metadata.log.max.snapshot.interval.ms = 3600000
+	metadata.log.segment.bytes = 1073741824
+	metadata.log.segment.min.bytes = 8388608
+	metadata.log.segment.ms = 604800000
+	metadata.max.idle.interval.ms = 500
+	metadata.max.retention.bytes = 104857600
+	metadata.max.retention.ms = 604800000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	min.insync.replicas = 1
+	node.id = 1
+	num.io.threads = 8
+	num.network.threads = 3
+	num.partitions = 1
+	num.recovery.threads.per.data.dir = 1
+	num.replica.alter.log.dirs.threads = null
+	num.replica.fetchers = 1
+	offset.metadata.max.bytes = 4096
+	offsets.commit.required.acks = -1
+	offsets.commit.timeout.ms = 5000
+	offsets.load.buffer.size = 5242880
+	offsets.retention.check.interval.ms = 600000
+	offsets.retention.minutes = 10080
+	offsets.topic.compression.codec = 0
+	offsets.topic.num.partitions = 50
+	offsets.topic.replication.factor = 1
+	offsets.topic.segment.bytes = 104857600
+	password.encoder.cipher.algorithm = AES/CBC/PKCS5Padding
+	password.encoder.iterations = 4096
+	password.encoder.key.length = 128
+	password.encoder.keyfactory.algorithm = null
+	password.encoder.old.secret = null
+	password.encoder.secret = null
+	principal.builder.class = class org.apache.kafka.common.security.authenticator.DefaultKafkaPrincipalBuilder
+	process.roles = [broker, controller]
+	producer.id.expiration.check.interval.ms = 600000
+	producer.id.expiration.ms = 86400000
+	producer.purgatory.purge.interval.requests = 1000
+	queued.max.request.bytes = -1
+	queued.max.requests = 500
+	quota.window.num = 11
+	quota.window.size.seconds = 1
+	remote.fetch.max.wait.ms = 500
+	remote.log.index.file.cache.total.size.bytes = 1073741824
+	remote.log.manager.copier.thread.pool.size = -1
+	remote.log.manager.copy.max.bytes.per.second = 9223372036854775807
+	remote.log.manager.copy.quota.window.num = 11
+	remote.log.manager.copy.quota.window.size.seconds = 1
+	remote.log.manager.expiration.thread.pool.size = -1
+	remote.log.manager.fetch.max.bytes.per.second = 9223372036854775807
+	remote.log.manager.fetch.quota.window.num = 11
+	remote.log.manager.fetch.quota.window.size.seconds = 1
+	remote.log.manager.task.interval.ms = 30000
+	remote.log.manager.task.retry.backoff.max.ms = 30000
+	remote.log.manager.task.retry.backoff.ms = 500
+	remote.log.manager.task.retry.jitter = 0.2
+	remote.log.manager.thread.pool.size = 10
+	remote.log.metadata.custom.metadata.max.bytes = 128
+	remote.log.metadata.manager.class.name = org.apache.kafka.server.log.remote.metadata.storage.TopicBasedRemoteLogMetadataManager
+	remote.log.metadata.manager.class.path = null
+	remote.log.metadata.manager.impl.prefix = rlmm.config.
+	remote.log.metadata.manager.listener.name = null
+	remote.log.reader.max.pending.tasks = 100
+	remote.log.reader.threads = 10
+	remote.log.storage.manager.class.name = null
+	remote.log.storage.manager.class.path = null
+	remote.log.storage.manager.impl.prefix = rsm.config.
+	remote.log.storage.system.enable = false
+	replica.fetch.backoff.ms = 1000
+	replica.fetch.max.bytes = 1048576
+	replica.fetch.min.bytes = 1
+	replica.fetch.response.max.bytes = 10485760
+	replica.fetch.wait.max.ms = 500
+	replica.high.watermark.checkpoint.interval.ms = 5000
+	replica.lag.time.max.ms = 30000
+	replica.selector.class = null
+	replica.socket.receive.buffer.bytes = 65536
+	replica.socket.timeout.ms = 30000
+	replication.quota.window.num = 11
+	replication.quota.window.size.seconds = 1
+	request.timeout.ms = 30000
+	reserved.broker.max.id = 1000
+	sasl.client.callback.handler.class = null
+	sasl.enabled.mechanisms = [GSSAPI]
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.principal.to.local.rules = [DEFAULT]
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism.controller.protocol = GSSAPI
+	sasl.mechanism.inter.broker.protocol = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	sasl.server.callback.handler.class = null
+	sasl.server.max.receive.size = 524288
+	security.inter.broker.protocol = PLAINTEXT
+	security.providers = null
+	server.max.startup.time.ms = 9223372036854775807
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	socket.listen.backlog.size = 50
+	socket.receive.buffer.bytes = 102400
+	socket.request.max.bytes = 104857600
+	socket.send.buffer.bytes = 102400
+	ssl.allow.dn.changes = false
+	ssl.allow.san.changes = false
+	ssl.cipher.suites = []
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = [hidden]
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = /Users/muralidharbasani/software/kafka_2.12-3.7.0/config/certs/client.keystore.p12
+	ssl.keystore.password = [hidden]
+	ssl.keystore.type = pkcs12
+	ssl.principal.mapping.rules = DEFAULT
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = /Users/muralidharbasani/software/kafka_2.12-3.7.0/config/certs/client.truststore.jks
+	ssl.truststore.password = [hidden]
+	ssl.truststore.type = JKS
+	telemetry.max.bytes = 1048576
+	transaction.abort.timed.out.transaction.cleanup.interval.ms = 10000
+	transaction.max.timeout.ms = 900000
+	transaction.partition.verification.enable = true
+	transaction.remove.expired.transaction.cleanup.interval.ms = 3600000
+	transaction.state.log.load.buffer.size = 5242880
+	transaction.state.log.min.isr = 1
+	transaction.state.log.num.partitions = 50
+	transaction.state.log.replication.factor = 1
+	transaction.state.log.segment.bytes = 104857600
+	transactional.id.expiration.ms = 604800000
+	unclean.leader.election.enable = false
+	unclean.leader.election.interval.ms = 300000
+	unstable.api.versions.enable = false
+	unstable.feature.versions.enable = false
+	zookeeper.clientCnxnSocket = null
+	zookeeper.connect = null
+	zookeeper.connection.timeout.ms = null
+	zookeeper.max.in.flight.requests = 10
+	zookeeper.metadata.migration.enable = false
+	zookeeper.metadata.migration.min.batch.size = 200
+	zookeeper.session.timeout.ms = 18000
+	zookeeper.set.acl = false
+	zookeeper.ssl.cipher.suites = null
+	zookeeper.ssl.client.enable = false
+	zookeeper.ssl.crl.enable = false
+	zookeeper.ssl.enabled.protocols = null
+	zookeeper.ssl.endpoint.identification.algorithm = HTTPS
+	zookeeper.ssl.keystore.location = null
+	zookeeper.ssl.keystore.password = null
+	zookeeper.ssl.keystore.type = null
+	zookeeper.ssl.ocsp.enable = false
+	zookeeper.ssl.protocol = TLSv1.2
+	zookeeper.ssl.truststore.location = null
+	zookeeper.ssl.truststore.password = null
+	zookeeper.ssl.truststore.type = null
+ (kafka.server.KafkaConfig)
+[2025-02-17 11:52:29,495] INFO [BrokerServer id=1] Waiting for the broker to be unfenced (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,530] INFO [BrokerLifecycleManager id=1] The broker has been unfenced. Transitioning from RECOVERY to RUNNING. (kafka.server.BrokerLifecycleManager)
+[2025-02-17 11:52:29,530] INFO [BrokerServer id=1] Finished waiting for the broker to be unfenced (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,530] INFO [ReplicaFetcherManager on broker 1] Removed fetcher for partitions Set(testtopic-0) (kafka.server.ReplicaFetcherManager)
+[2025-02-17 11:52:29,534] INFO authorizerStart completed for endpoint PLAINTEXT. Endpoint is now READY. (org.apache.kafka.server.network.EndpointReadyFutures)
+[2025-02-17 11:52:29,534] INFO [SocketServer listenerType=BROKER, nodeId=1] Enabling request processing. (kafka.network.SocketServer)
+[2025-02-17 11:52:29,534] INFO Awaiting socket connections on 0.0.0.0:9092. (kafka.network.DataPlaneAcceptor)
+[2025-02-17 11:52:29,535] INFO [BrokerServer id=1] Waiting for all of the authorizer futures to be completed (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,535] INFO [BrokerServer id=1] Finished waiting for all of the authorizer futures to be completed (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,535] INFO [BrokerServer id=1] Waiting for all of the SocketServer Acceptors to be started (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,535] INFO [BrokerServer id=1] Finished waiting for all of the SocketServer Acceptors to be started (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,535] INFO [BrokerServer id=1] Transition from STARTING to STARTED (kafka.server.BrokerServer)
+[2025-02-17 11:52:29,535] INFO Kafka version: 3.9.0 (org.apache.kafka.common.utils.AppInfoParser)
+[2025-02-17 11:52:29,535] INFO Kafka commitId: a60e31147e6b01ee (org.apache.kafka.common.utils.AppInfoParser)
+[2025-02-17 11:52:29,535] INFO Kafka startTimeMs: 1739789549535 (org.apache.kafka.common.utils.AppInfoParser)
+[2025-02-17 11:52:29,536] INFO [KafkaRaftServer nodeId=1] Kafka Server started (kafka.server.KafkaRaftServer)
+[2025-02-17 11:52:47,165] WARN [SocketServer listenerType=BROKER, nodeId=1] Unexpected error from /127.0.0.1 (channelId=127.0.0.1:9092-127.0.0.1:51749-0); closing connection (org.apache.kafka.common.network.Selector)
+org.apache.kafka.common.network.InvalidReceiveException: Invalid receive (size = 369296129 larger than 104857600)
+	at org.apache.kafka.common.network.NetworkReceive.readFrom(NetworkReceive.java:95)
+	at org.apache.kafka.common.network.KafkaChannel.receive(KafkaChannel.java:462)
+	at org.apache.kafka.common.network.KafkaChannel.read(KafkaChannel.java:412)
+	at org.apache.kafka.common.network.Selector.attemptRead(Selector.java:694)
+	at org.apache.kafka.common.network.Selector.pollSelectionKeys(Selector.java:596)
+	at org.apache.kafka.common.network.Selector.poll(Selector.java:501)
+	at kafka.network.Processor.poll(SocketServer.scala:1110)
+	at kafka.network.Processor.run(SocketServer.scala:1014)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2025-02-17 11:52:47,369] WARN [SocketServer listenerType=BROKER, nodeId=1] Unexpected error from /127.0.0.1 (channelId=127.0.0.1:9092-127.0.0.1:51750-0); closing connection (org.apache.kafka.common.network.Selector)
+org.apache.kafka.common.network.InvalidReceiveException: Invalid receive (size = 369296129 larger than 104857600)
+	at org.apache.kafka.common.network.NetworkReceive.readFrom(NetworkReceive.java:95)
+	at org.apache.kafka.common.network.KafkaChannel.receive(KafkaChannel.java:462)
+	at org.apache.kafka.common.network.KafkaChannel.read(KafkaChannel.java:412)
+	at org.apache.kafka.common.network.Selector.attemptRead(Selector.java:694)
+	at org.apache.kafka.common.network.Selector.pollSelectionKeys(Selector.java:596)
+	at org.apache.kafka.common.network.Selector.poll(Selector.java:501)
+	at kafka.network.Processor.poll(SocketServer.scala:1110)
+	at kafka.network.Processor.run(SocketServer.scala:1014)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2025-02-17 11:52:47,476] WARN [SocketServer listenerType=BROKER, nodeId=1] Unexpected error from /127.0.0.1 (channelId=127.0.0.1:9092-127.0.0.1:51752-0); closing connection (org.apache.kafka.common.network.Selector)
+org.apache.kafka.common.network.InvalidReceiveException: Invalid receive (size = 369296129 larger than 104857600)
+	at org.apache.kafka.common.network.NetworkReceive.readFrom(NetworkReceive.java:95)
+	at org.apache.kafka.common.network.KafkaChannel.receive(KafkaChannel.java:462)
+	at org.apache.kafka.common.network.KafkaChannel.read(KafkaChannel.java:412)
+	at org.apache.kafka.common.network.Selector.attemptRead(Selector.java:694)
+	at org.apache.kafka.common.network.Selector.pollSelectionKeys(Selector.java:596)
+	at org.apache.kafka.common.network.Selector.poll(Selector.java:501)
+	at kafka.network.Processor.poll(SocketServer.scala:1110)
+	at kafka.network.Processor.run(SocketServer.scala:1014)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2025-02-17 11:52:47,686] WARN [SocketServer listenerType=BROKER, nodeId=1] Unexpected error from /127.0.0.1 (channelId=127.0.0.1:9092-127.0.0.1:51753-1); closing connection (org.apache.kafka.common.network.Selector)
+org.apache.kafka.common.network.InvalidReceiveException: Invalid receive (size = 369296129 larger than 104857600)
+	at org.apache.kafka.common.network.NetworkReceive.readFrom(NetworkReceive.java:95)
+	at org.apache.kafka.common.network.KafkaChannel.receive(KafkaChannel.java:462)
+	at org.apache.kafka.common.network.KafkaChannel.read(KafkaChannel.java:412)
+	at org.apache.kafka.common.network.Selector.attemptRead(Selector.java:694)
+	at org.apache.kafka.common.network.Selector.pollSelectionKeys(Selector.java:596)
+	at org.apache.kafka.common.network.Selector.poll(Selector.java:501)
+	at kafka.network.Processor.poll(SocketServer.scala:1110)
+	at kafka.network.Processor.run(SocketServer.scala:1014)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2025-02-17 11:52:48,204] WARN [SocketServer listenerType=BROKER, nodeId=1] Unexpected error from /127.0.0.1 (channelId=127.0.0.1:9092-127.0.0.1:51754-1); closing connection (org.apache.kafka.common.network.Selector)
+org.apache.kafka.common.network.InvalidReceiveException: Invalid receive (size = 369296129 larger than 104857600)
+	at org.apache.kafka.common.network.NetworkReceive.readFrom(NetworkReceive.java:95)
+	at org.apache.kafka.common.network.KafkaChannel.receive(KafkaChannel.java:462)
+	at org.apache.kafka.common.network.KafkaChannel.read(KafkaChannel.java:412)
+	at org.apache.kafka.common.network.Selector.attemptRead(Selector.java:694)
+	at org.apache.kafka.common.network.Selector.pollSelectionKeys(Selector.java:596)
+	at org.apache.kafka.common.network.Selector.poll(Selector.java:501)
+	at kafka.network.Processor.poll(SocketServer.scala:1110)
+	at kafka.network.Processor.run(SocketServer.scala:1014)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2025-02-17 11:52:49,029] WARN [SocketServer listenerType=BROKER, nodeId=1] Unexpected error from /127.0.0.1 (channelId=127.0.0.1:9092-127.0.0.1:51755-1); closing connection (org.apache.kafka.common.network.Selector)
+org.apache.kafka.common.network.InvalidReceiveException: Invalid receive (size = 369296129 larger than 104857600)
+	at org.apache.kafka.common.network.NetworkReceive.readFrom(NetworkReceive.java:95)
+	at org.apache.kafka.common.network.KafkaChannel.receive(KafkaChannel.java:462)
+	at org.apache.kafka.common.network.KafkaChannel.read(KafkaChannel.java:412)
+	at org.apache.kafka.common.network.Selector.attemptRead(Selector.java:694)
+	at org.apache.kafka.common.network.Selector.pollSelectionKeys(Selector.java:596)
+	at org.apache.kafka.common.network.Selector.poll(Selector.java:501)
+	at kafka.network.Processor.poll(SocketServer.scala:1110)
+	at kafka.network.Processor.run(SocketServer.scala:1014)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+[2025-02-17 11:52:49,952] WARN [SocketServer listenerType=BROKER, nodeId=1] Unexpected error from /127.0.0.1 (channelId=127.0.0.1:9092-127.0.0.1:51756-2); closing connection (org.apache.kafka.common.network.Selector)
+org.apache.kafka.common.network.InvalidReceiveException: Invalid receive (size = 369296129 larger than 104857600)
+	at org.apache.kafka.common.network.NetworkReceive.readFrom(NetworkReceive.java:95)
+	at org.apache.kafka.common.network.KafkaChannel.receive(KafkaChannel.java:462)
+	at org.apache.kafka.common.network.KafkaChannel.read(KafkaChannel.java:412)
+	at org.apache.kafka.common.network.Selector.attemptRead(Selector.java:694)
+	at org.apache.kafka.common.network.Selector.pollSelectionKeys(Selector.java:596)
+	at org.apache.kafka.common.network.Selector.poll(Selector.java:501)
+	at kafka.network.Processor.poll(SocketServer.scala:1110)
+	at kafka.network.Processor.run(SocketServer.scala:1014)
+	at java.base/java.lang.Thread.run(Thread.java:833)
