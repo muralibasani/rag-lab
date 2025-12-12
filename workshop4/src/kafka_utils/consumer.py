@@ -5,7 +5,7 @@ from typing import Any, Callable, Dict, List, Optional
 
 from confluent_kafka import Consumer, KafkaError, KafkaException
 
-from kafka_utils.config import get_consumer_config
+from src.kafka_utils.config import get_consumer_config
 
 logger = logging.getLogger(__name__)
 

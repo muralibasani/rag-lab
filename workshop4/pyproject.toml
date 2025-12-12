@@ -1,5 +1,5 @@
 [project]
-name = "Workshop3"
+name = "Workshop4"
 version = "0.1.0"
 description = "Workshop4"
 readme = "README.md"
@@ -23,4 +23,5 @@ dependencies = [
     "pymongo>=4.15.3",
     "mongoengine>=0.29.1",
     "postgres>=4.0",
+    "confluent-kafka>=2.12.2",
 ]

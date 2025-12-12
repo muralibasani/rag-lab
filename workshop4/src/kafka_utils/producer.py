@@ -4,7 +4,7 @@ from typing import Any, Dict, Optional
 
 from confluent_kafka import Producer, KafkaError
 
-from kafka_utils.config import get_producer_config
+from src.kafka_utils.config import get_producer_config
 
 logger = logging.getLogger(__name__)
 
