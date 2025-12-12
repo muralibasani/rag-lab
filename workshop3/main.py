@@ -39,13 +39,19 @@ def extract_sql(text):
     return text.strip().split("SQL Query:")[-1].strip()
 
 
+def clean_sql(query: str) -> str:
+    q = query.strip()
+    q = q.replace("```sql", "").replace("```", "").strip()
+    return q
+
 sql_chain = (
     RunnablePassthrough.assign(schema=get_schema)
     | get_prompt()
-    | llm.bind(stop=[";"])
+    | llm.bind(stop=["\nSQL Result:"])
     | StrOutputParser()
-    | extract_sql
+    | (lambda text: clean_sql(text.strip().split("SQL Query:")[-1].strip()))
 )
+
 
 
 def get_final_prompt():
