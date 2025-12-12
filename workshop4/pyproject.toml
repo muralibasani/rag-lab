@@ -23,5 +23,6 @@ dependencies = [
     "pymongo>=4.15.3",
     "mongoengine>=0.29.1",
     "postgres>=4.0",
+    "psycopg2-binary>=2.9.0",
     "confluent-kafka>=2.12.2",
 ]
