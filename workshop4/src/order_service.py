@@ -140,6 +140,137 @@ def get_order_status(order_id: int) -> Dict:
         raise
 
 
+def get_order_details(order_id: int) -> Dict:
+    """Get comprehensive details of a specific order including customer, items, tracking, cancellation, refund, and delivery information."""
+    try:
+        # Get order basic info with customer details
+        order_rows = execute_query("""
+            SELECT
+                o.order_id,
+                o.customer_id,
+                o.order_date,
+                o.order_status,
+                o.total_amount,
+                c.name AS customer_name,
+                c.email AS customer_email,
+                c.phone AS customer_phone
+            FROM lg_orders o
+            LEFT JOIN lg_customers c ON o.customer_id = c.customer_id
+            WHERE o.order_id = %s;
+        """, params=(order_id,))
+
+        if not order_rows:
+            return {
+                "order_id": order_id,
+                "exists": False
+            }
+
+        order_row = order_rows[0]
+        order_id_val, customer_id, order_date, order_status, total_amount, customer_name, customer_email, customer_phone = order_row
+
+        # Get order items
+        items_rows = execute_query("""
+            SELECT product_name, quantity, price
+            FROM lg_order_items
+            WHERE order_id = %s
+            ORDER BY item_id;
+        """, params=(order_id,))
+
+        items = []
+        for item_row in items_rows:
+            product_name, quantity, price = item_row
+            items.append({
+                "product_name": str(product_name) if product_name else None,
+                "quantity": int(quantity) if quantity else 0,
+                "price": float(price) if price else 0.0
+            })
+
+        # Get tracking information
+        tracking_rows = execute_query("""
+            SELECT status, location, timestamp
+            FROM lg_order_tracking
+            WHERE order_id = %s
+            ORDER BY timestamp;
+        """, params=(order_id,))
+
+        tracking = []
+        for track_row in tracking_rows:
+            status, location, timestamp = track_row
+            tracking.append({
+                "status": str(status) if status else None,
+                "location": str(location) if location else None,
+                "timestamp": timestamp.isoformat() if timestamp else None
+            })
+
+        # Get cancellation info
+        cancel_rows = execute_query("""
+            SELECT cancel_date, reason, cancelled_by
+            FROM lg_order_cancellation
+            WHERE order_id = %s;
+        """, params=(order_id,))
+
+        cancellation = None
+        if cancel_rows:
+            cancel_date, reason, cancelled_by = cancel_rows[0]
+            cancellation = {
+                "cancel_date": cancel_date.isoformat() if cancel_date else None,
+                "reason": str(reason) if reason else None,
+                "cancelled_by": str(cancelled_by) if cancelled_by else None
+            }
+
+        # Get refund info
+        refund_rows = execute_query("""
+            SELECT refund_date, refund_amount, refund_status
+            FROM lg_refunds
+            WHERE order_id = %s;
+        """, params=(order_id,))
+
+        refund = None
+        if refund_rows:
+            refund_date, refund_amount, refund_status = refund_rows[0]
+            refund = {
+                "refund_date": refund_date.isoformat() if refund_date else None,
+                "refund_amount": float(refund_amount) if refund_amount else None,
+                "refund_status": str(refund_status) if refund_status else None
+            }
+
+        # Get delivery info
+        delivery_rows = execute_query("""
+            SELECT delivered_date, delivery_person, comments
+            FROM lg_delivered_orders
+            WHERE order_id = %s;
+        """, params=(order_id,))
+
+        delivery = None
+        if delivery_rows:
+            delivered_date, delivery_person, comments = delivery_rows[0]
+            delivery = {
+                "delivered_date": delivered_date.isoformat() if delivered_date else None,
+                "delivery_person": str(delivery_person) if delivery_person else None,
+                "comments": str(comments) if comments else None
+            }
+
+        return {
+            "order_id": int(order_id_val),
+            "exists": True,
+            "customer_id": int(customer_id) if customer_id else None,
+            "customer_name": str(customer_name) if customer_name else None,
+            "customer_email": str(customer_email) if customer_email else None,
+            "customer_phone": str(customer_phone) if customer_phone else None,
+            "order_date": order_date.isoformat() if order_date else None,
+            "order_status": str(order_status) if order_status else None,
+            "total_amount": float(total_amount) if total_amount else None,
+            "items": items,
+            "tracking": tracking,
+            "cancellation": cancellation,
+            "refund": refund,
+            "delivery": delivery
+        }
+    except Exception as e:
+        logger.error(f"Error getting order details: {e}", exc_info=True)
+        raise
+
+
 def cancel_order(order_id: int) -> Dict:
     """Cancel an order by updating its status and creating a cancellation record."""
     try:

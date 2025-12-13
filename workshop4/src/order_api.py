@@ -3,8 +3,8 @@ FastAPI endpoints for order operations.
 """
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from typing import Optional
-from src.order_service import get_order_count, get_order_status, cancel_order, refund_order
+from typing import Optional, List
+from src.order_service import get_order_count, get_order_status, get_order_details, cancel_order, refund_order
 import logging
 
 logger = logging.getLogger(__name__)
@@ -39,6 +39,53 @@ class RefundOrderResponse(BaseModel):
     refund_amount: Optional[float] = None
 
 
+class OrderItem(BaseModel):
+    product_name: Optional[str] = None
+    quantity: int = 0
+    price: float = 0.0
+
+
+class OrderTracking(BaseModel):
+    status: Optional[str] = None
+    location: Optional[str] = None
+    timestamp: Optional[str] = None
+
+
+class CancellationInfo(BaseModel):
+    cancel_date: Optional[str] = None
+    reason: Optional[str] = None
+    cancelled_by: Optional[str] = None
+
+
+class RefundInfo(BaseModel):
+    refund_date: Optional[str] = None
+    refund_amount: Optional[float] = None
+    refund_status: Optional[str] = None
+
+
+class DeliveryInfo(BaseModel):
+    delivered_date: Optional[str] = None
+    delivery_person: Optional[str] = None
+    comments: Optional[str] = None
+
+
+class OrderDetailsResponse(BaseModel):
+    order_id: int
+    exists: bool
+    customer_id: Optional[int] = None
+    customer_name: Optional[str] = None
+    customer_email: Optional[str] = None
+    customer_phone: Optional[str] = None
+    order_date: Optional[str] = None
+    order_status: Optional[str] = None
+    total_amount: Optional[float] = None
+    items: List[OrderItem] = []
+    tracking: List[OrderTracking] = []
+    cancellation: Optional[CancellationInfo] = None
+    refund: Optional[RefundInfo] = None
+    delivery: Optional[DeliveryInfo] = None
+
+
 @app.get("/orders/count", response_model=OrderCountResponse)
 async def get_order_count_endpoint():
     """Get the total count of orders and count by status."""
@@ -55,18 +102,31 @@ async def get_order_status_endpoint(order_id: int):
     """Get the status and details of a specific order."""
     try:
         result = get_order_status(order_id)
-        return {
-            "order_id": order_id,
-            "exists": False,
-            "status": None,
-            "total_amount": None,
-            "has_cancellation": False,
-            "has_refund": False
-        }
-
+        if not result.get("exists"):
+            return OrderStatusResponse(
+                order_id=order_id,
+                exists=False
+            )
+        return OrderStatusResponse(**result)
     except Exception as e:
         logger.error(f"Error getting order status: {e}")
         raise HTTPException(status_code=500, detail=f"Error getting order status: {str(e)}")
+
+
+@app.get("/orders/{order_id}/details", response_model=OrderDetailsResponse)
+async def get_order_details_endpoint(order_id: int):
+    """Get comprehensive details of a specific order including customer, items, tracking, cancellation, refund, and delivery information."""
+    try:
+        result = get_order_details(order_id)
+        if not result.get("exists"):
+            return OrderDetailsResponse(
+                order_id=order_id,
+                exists=False
+            )
+        return OrderDetailsResponse(**result)
+    except Exception as e:
+        logger.error(f"Error getting order details: {e}")
+        raise HTTPException(status_code=500, detail=f"Error getting order details: {str(e)}")
 
 
 @app.post("/orders/{order_id}/cancel", response_model=CancelOrderResponse)

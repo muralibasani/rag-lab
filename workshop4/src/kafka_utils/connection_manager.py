@@ -135,3 +135,4 @@ class KafkaConnectionManager:
         self.disconnect_all()
         logger.info("Kafka connection manager shutdown complete")
 
+
